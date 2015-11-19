@@ -53,7 +53,7 @@ $(document).ready(function(){
 				} else if (title.indexOf("xamarin") >= 0){
 					$(".xamarinRepo .sdkRepoStar").text(stars);
 					$(".xamarinRepo .sdkRepoFork").text(forks);
-				} else if (title.indexOf("adruino") >= 0){
+				} else if (title.indexOf("arduino") >= 0){
 					$(".arduinoRepo .sdkRepoStar").text(stars);
 					$(".arduinoRepo .sdkRepoFork").text(forks);
 					console.log("stars: " + stars + " forks: " + forks);
