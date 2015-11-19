@@ -37,23 +37,23 @@ $(document).ready(function(){
 			//if title contains sdk hide it (since we hardcode them)
 			if (sortTitle.indexOf("sdk") >= 0) {
 				//if title matches hardcoded repo title then use these forks/stars
-				console.log(sortTitle);
-				if (title.indexOf("ios") >= 0){
+				console.log("cats" + sortTitle);
+				if (title.includes("ios") >= 0){
 					$(".iosRepo .sdkRepoStar").text(stars);
 					$(".iosRepo .sdkRepoFork").text(forks);
-				} else if (title.indexOf("android") >= 0){
+				} else if (title.includes("android") >= 0){
 					$(".androidRepo .sdkRepoStar").text(stars);
 					$(".androidRepo .sdkRepoFork").text(forks);
-				} else if (title.indexOf("javascript") >= 0){
+				} else if (title.includes("javascript") >= 0){
 					$(".javascriptRepo .sdkRepoStar").text(stars);
 					$(".javascriptRepo .sdkRepoFork").text(forks);
-				} else if (title.indexOf("php") >= 0){
+				} else if (title.includes("php") >= 0){
 					$(".phpRepo .sdkRepoStar").text(stars);
 					$(".phpRepo .sdkRepoFork").text(forks);
-				} else if (title.indexOf("xamarin") >= 0){
+				} else if (title.includes("xamarin") >= 0){
 					$(".xamarinRepo .sdkRepoStar").text(stars);
 					$(".xamarinRepo .sdkRepoFork").text(forks);
-				} else if (title.indexOf("arduino") >= 0){
+				} else if (title.includes("arduino") >= 0){
 					$(".arduinoRepo .sdkRepoStar").text(stars);
 					$(".arduinoRepo .sdkRepoFork").text(forks);
 					console.log("stars: " + stars + " forks: " + forks);
