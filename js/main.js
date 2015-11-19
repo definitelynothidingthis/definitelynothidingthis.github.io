@@ -35,9 +35,8 @@ $(document).ready(function(){
 			title = title.replace(/-/g, ' ');
 
 			//if title contains sdk hide it (since we hardcode them)
-			if (sortTitle.indexOf("sdk") >= 0) {
+			if (sortTitle.includes("sdk") === true) {
 				//if title matches hardcoded repo title then use these forks/stars
-				console.log("dogs " + sortTitle);
 				if (sortTitle.includes("ios") === true){
 					$(".iosRepo .sdkRepoStar").text(stars);
 					$(".iosRepo .sdkRepoFork").text(forks);
@@ -56,7 +55,6 @@ $(document).ready(function(){
 				} else if (sortTitle.includes("arduino") === true){
 					$(".arduinoRepo .sdkRepoStar").text(stars);
 					$(".arduinoRepo .sdkRepoFork").text(forks);
-					console.log("stars: " + stars + " forks: " + forks);
 				}
 				continue;
 			}
