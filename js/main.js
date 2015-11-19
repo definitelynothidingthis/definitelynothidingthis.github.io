@@ -37,7 +37,7 @@ $(document).ready(function(){
 			//if title contains sdk hide it (since we hardcode them)
 			if (sortTitle.indexOf("sdk") >= 0) {
 				//if title matches hardcoded repo title then use these forks/stars
-				console.log("cats" + sortTitle);
+				console.log("dogs " + sortTitle);
 				if (sortTitle.includes("ios") === true){
 					$(".iosRepo .sdkRepoStar").text(stars);
 					$(".iosRepo .sdkRepoFork").text(forks);
