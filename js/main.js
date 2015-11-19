@@ -1,6 +1,5 @@
 /* global Parse */
 /* global console */
-/* global gitJson */
 $(document).ready(function(){
 	"use strict";
 	   //====================================//
@@ -10,7 +9,7 @@ $(document).ready(function(){
 	var totalStars = 0,
 		totalForks = 0,
 		totalRepos = 0;
-	if (gitJson){
+	/*if (gitJson){
 		for (var j = 0; j < gitJson.length; j++) {
 			var title 		= gitJson[j].name,
 				sortTitle 	= title.toLowerCase(),
@@ -38,6 +37,25 @@ $(document).ready(function(){
 			if (sortTitle.indexOf("sdk") >= 0) {
 				//-> if matches hardcoded repo title(ex arduino-SDK.indexof("arduino") then use these forks/stars/description
 				//else
+				if (title.indexOf("ios") >= 0){
+					$(".iosRepo .sdkRepoStar").text(stars);
+					$(".iosRepo .sdkRepoFork").text(forks);
+				} else if (title.indexOf("android") >= 0){
+					$(".androidRepo .sdkRepoStar").text(stars);
+					$(".androidRepo .sdkRepoFork")
+				} else if (title.indexOf("javascript") >= 0){
+					$(".javascriptRepo .sdkRepoStar").text(stars);
+					$(".javascriptRepo .sdkRepoFork").text(forks);
+				} else if (title.indexOf("php") >= 0){
+					$(".phpRepo .sdkRepoStar").text(stars);
+					$(".phpRepo .sdkRepoFork").text(forks);
+				} else if (title.indexOf("xamarin") >= 0){
+					$(".xamarinRepo .sdkRepoStar").text(stars);
+					$(".xamarinRepo .sdkRepoFork").text(forks);
+				} else if (title.indexOf("adruino") >= 0){
+					$(".arduinoRepo .sdkRepoStar").text(stars);
+					$(".arduinoRepo .sdkRepoFork").text(forks);
+				}
 				continue;
 			}
 
@@ -50,7 +68,7 @@ $(document).ready(function(){
 				$("section.other").append('<div class="repo"><div class="repoTitle"><h4>' + title + '</h4><p><span><img src="img/starsDark.svg" alt="" class="icon">' + stars + '</span><span><img src="img/forksDark.svg" alt="" class="icon">' + forks + '</span><span>' + language + '</span></p></div><div class="repoDescription"><p>' + description + '</p></div><div class="repoButton"><a href="' + url + '" target="_blank"><button class="outline">View on Github</button></a></div></div>');
 			}
 		}
-	}
+	}*/
 
 	//write total forks, stars and repos into the page
 	$(".heroText .repoCount").text(totalRepos);
@@ -98,84 +116,126 @@ $(document).ready(function(){
 	});
 
 	function headerAnimation(){
-		var fullTime = 52000;
-		//scroll through the horizon
-		$(".foregroundContainer").velocity({ 
-				translateX: "-150%",
-		}, { queue: false, duration: fullTime, easing: "linear" });
-		$(".skyline").velocity({ 
-				translateX: -($(".skyline").width() - browserWidth),
-		}, { queue: false, duration: fullTime * 3, easing: "linear" });
-
-		//move the transport truck
-		$(".transport").velocity({ 
-			translateX: ["180%", "50%"]
-		}, { queue: false, duration: fullTime, easing: "linear", begin: function() {
-			$(".transportWheels .wheel").velocity({ 
-				rotateZ: 360 * 3.45 + "deg"
-			}, { queue: false, duration: fullTime, easing: "linear" });
-		} });
-		
-
-		//crane putting video on phone
-		$(".loadInner line, .loadInner circle, .videoLoad").velocity({ 
-			translateX: [0, "12vh"],
-			translateY: [0, "-12vh"]
-		}, { queue: false, duration: 3200, delay: 800, easing: [ 0.4, 0, 0.2, 1 ], 
-		begin: function() { 
-			$(".craneInner .anchor").velocity({ 
-				translateX: [0, "12vh"]
-			}, { queue: false, duration: 3200, easing: [ 0.4, 0, 0.2, 1 ] });
-		}, complete: function(){
-			//move the line back
-			$(".loadInner line, .loadInner circle").velocity({ 
-				translateY: ["-12vh", 0]
-			}, { queue: false, duration: 4800, easing: [ 0.4, 0, 0.2, 1 ] });
-
-			//animate in the phone content
-			var phonePath = $(".cranePhoneContent path");
-			for (var p = 0; p < phonePath.length; p++) {
-				phonePath.eq(p).velocity({ 
-					scale: [1, 0.6],
-					opacity: 1
-				}, { queue: false, duration: 3200, delay: 200 * p, easing: [ 0.23, 1, 0.32, 1 ] });
-			}
-			
-		} });
-
-		//dropping data into laptop
-		$(".laptopHook, .laptopData").velocity({ 
-			translateY: [0, "-100%"],
-			translateX: ["20%", "20%"]
-		}, { queue: false, duration: 3200, delay: fullTime / 3, easing: [ 0.4, 0, 0.2, 1 ],
-		complete: function(){
-			$(".laptopHook").velocity({ 
-				translateY: ["-100%", 0],
-				translateX: ["20%", "20%"]
-			}, { queue: false, duration: 3200, easing: [ 0.4, 0, 0.2, 1 ] });
-			$(".laptopData g").velocity({ 
-				scale: 0.4,
-				opacity: 0
-			}, { queue: false, duration: 1200, delay: 400, easing: [ 0.175, 0.885, 0.320, 1.275 ] });
-			$(".laptopContent").velocity({ 
-				translateY: [0, "100%"]
-			}, { queue: false, duration: 1200, delay: 1200, easing: [ 0.4, 0, 0.2, 1 ] });
-			$(".browserChrome").velocity({ 
-				translateY: [0, "-100%"]
-			}, { queue: false, duration: 1200, delay: 1200, easing: [ 0.4, 0, 0.2, 1 ] });
-		} });
-
-		//tanker truck moving
-		$(".tanker").velocity({ 
-			translateX: ["750%", "520%"]
-		}, { queue: false, duration: fullTime, delay: fullTime / 1.2, easing: "linear", begin: function() {
-			$(".tanker .wheel").velocity({ 
-				rotateZ: 360 * 3.45 + "deg"
-			}, { queue: false, duration: fullTime, easing: "linear" });
-		} });
-
-
+		  //
+		 // Phone 1 (Left)
 		//
+		//move line down to grab video
+		$(".craneLineInner").velocity({ 
+			translateY: [0, "-85%"],
+		}, { queue: false, duration: 600, easing: [ 0.4, 0, 0.2, 1 ], complete: function(){
+			//move line anchor right
+			$(".cranePivot").velocity({ 
+				translateX: ["646%", 0]
+			}, { queue: false, duration: 600, delay: 200, easing: [ 0.4, 0, 0.2, 1 ] });
+			//move line + video onto the phone
+			$(".craneLine").velocity({ 
+				translateY: ["-31.5%", 0],
+				translateX: ["76%", 0]
+			}, { queue: false, duration: 600, delay: 200, easing: [ 0.4, 0, 0.2, 1 ], complete: function(){ 
+				//move the line back up away from phone
+				$(".craneLineInner").velocity({ 
+					translateY: ["-40%", 0],
+				}, { queue: false, duration: 800, easing: [ 0.4, 0, 0.2, 1 ] });
+				//fade + animate in apps
+				var rectApps = $(".apps rect"),
+					pathApps = $(".apps path");
+				for (var p = 0; p < pathApps.length; p++) {
+					pathApps.eq(p).velocity({ 
+						opacity: 1,
+						scale: [1, 0.45],
+						translateY: 0,
+						rotateZ: [0, "90deg"]
+					}, { queue: false, duration: 600, delay: 100 * p + 400, easing: [ 0.175, 0.885, 0.320, 1.275 ] });
+				}
+				for (var r = 0; r < rectApps.length; r++) {
+					rectApps.eq(r).velocity({ 
+						opacity: 1,
+						scale: [1, 0.45],
+						translateY: 0,
+						rotateZ: 0
+					}, { queue: false, duration: 600, delay: ((100 * r) + (100 * p) + 400), easing: [ 0.175, 0.885, 0.320, 1.275 ] });
+				}
+				//turn screen on
+				$(".phone1Screen").velocity({ 
+					fill: "#EF3F61"
+				}, { queue: false, duration: 600, easing: [ 0.4, 0, 0.2, 1 ] });
+			} });
+		} });
+
+		  //
+		 // Phone 2 (Center)
+		//
+		//value of how much we have to move the line up to hide it
+		var middleLineUp = -105;
+		if (browserWidth < 600){
+			middleLineUp = -170;
+		}
+
+		//move middle line to grab push icon
+		$(".middleLineOneInner").velocity({ 
+			translateY: [0, "-105%"],
+		}, { queue: false, duration: 1200, delay: 800, easing: [ 300, 28 ], complete: function(){
+			//rotate the push icon
+			$(".pushOne").velocity({ 
+				rotateZ: ["12deg", "0deg"],
+			}, { queue: false, duration: 300, easing: [ 0.4, 0, 0.2, 1 ] });
+
+			//lift up the push icon
+			$(".middleLineOne").velocity({ 
+				translateY: ["-100%", 0],
+			}, { queue: false, duration: 800, easing: [ 0.4, 0, 0.2, 1 ], complete: function(){
+				//put the icon on the phone screen
+				$(".middleLine2").velocity({ 
+					translateY: [0, "-105%"],
+				}, { queue: false, duration: 1000, delay: 200, easing: [ 300, 28 ], complete: function(){
+					//pull the line back up
+					$(".middleLine2Inner").velocity({ 
+						translateY: [middleLineUp + "%", 0],
+					}, { queue: false, duration: 1000, delay: 200, easing: [ 300, 28 ] });
+					//turn phone screen on
+					$(".phone2Color").velocity({ 
+						scale: [1, 0]
+					}, { queue: false, duration: 350, easing: [ 0.25, 0.46, 0.45, 0.94 ] });
+					$(".phone2Screen").velocity({ 
+						fill: "#4BBC6E"
+					}, { queue: false, duration: 150, delay: 200, easing: [ 0.4, 0, 0.2, 1 ] });
+					//change icon color
+					$(".push2 path").velocity({ 
+						fill: "#40a05b"
+					}, { queue: false, duration: 200, easing: [ 0.4, 0, 0.2, 1 ] });
+				} });
+			} });
+		} });
+
+		  //
+		 // Phone 3 (Right)
+		//
+		//drive in the hoist
+		$(".hoist").velocity({ 
+			translateX: [0, "100%"],
+		}, { queue: false, duration: 4400, easing: [0.39, 0.575, 0.565, 1], complete: function(){
+			//turn screen on
+			$(".phone3Color").velocity({ 
+				scale: ["1", "0"]
+			}, { queue: false, duration: 350, easing: [ 0.25, 0.46, 0.45, 0.94 ] });
+			$(".phone3Screen").velocity({ 
+				fill: "#555574"
+			}, { queue: false, duration: 150, delay: 200, easing: [ 0.4, 0, 0.2, 1 ] });
+			$(".analytics path").velocity({ 
+				fill: "#3A3A59"
+			}, { queue: false, duration: 200, easing: [ 0.4, 0, 0.2, 1 ] });
+
+			//lift hoist line up
+			$(".hoistLineInner").velocity({ 
+				translateY: ["-65%", 0]
+			}, { queue: false, duration: 800, easing: [ 0.4, 0, 0.2, 1 ] });
+
+		}, begin: function(){
+			//turn hoist wheels
+			$(".hoistWheels g").velocity({ 
+				rotateZ: ["-720deg", "0deg"],
+			}, { queue: false, duration: 4400, easing: [0.39, 0.575, 0.565, 1]});
+		} });
 	}
 
 	headerAnimation();
@@ -200,12 +260,14 @@ $(document).ready(function(){
 
 			//parallax header
 			var headerheight = $(".header").height();
-			if (scrolled >= 0 && scrolled <= headerheight){
+			if (scrolled >= 0 && scrolled <= browserHeight && browserWidth > 960){
 				$(".heroText").css({
-					'transform': 'translateY(-' + (scrolled / 1.5) + 'px)',
+					'transform': 'translateY(-' + (scrolled / 1.6) + 'px)',
 					'opacity': 1 - (scrolled / headerheight)
 				});
-
+				$(".skyline").css({
+					'transform': 'translateY(' + (scrolled * 0.135) + 'px)',
+				});
 			}
 			
 	    }
