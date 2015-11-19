@@ -1,5 +1,6 @@
 /* global Parse */
 /* global console */
+/* global gitJson */
 $(document).ready(function(){
 	"use strict";
 	   //====================================//
@@ -9,7 +10,7 @@ $(document).ready(function(){
 	var totalStars = 0,
 		totalForks = 0,
 		totalRepos = 0;
-	/*if (gitJson){
+	if (gitJson){
 		for (var j = 0; j < gitJson.length; j++) {
 			var title 		= gitJson[j].name,
 				sortTitle 	= title.toLowerCase(),
@@ -42,7 +43,7 @@ $(document).ready(function(){
 					$(".iosRepo .sdkRepoFork").text(forks);
 				} else if (title.indexOf("android") >= 0){
 					$(".androidRepo .sdkRepoStar").text(stars);
-					$(".androidRepo .sdkRepoFork")
+					$(".androidRepo .sdkRepoFork").text(forks);
 				} else if (title.indexOf("javascript") >= 0){
 					$(".javascriptRepo .sdkRepoStar").text(stars);
 					$(".javascriptRepo .sdkRepoFork").text(forks);
@@ -68,7 +69,7 @@ $(document).ready(function(){
 				$("section.other").append('<div class="repo"><div class="repoTitle"><h4>' + title + '</h4><p><span><img src="img/starsDark.svg" alt="" class="icon">' + stars + '</span><span><img src="img/forksDark.svg" alt="" class="icon">' + forks + '</span><span>' + language + '</span></p></div><div class="repoDescription"><p>' + description + '</p></div><div class="repoButton"><a href="' + url + '" target="_blank"><button class="outline">View on Github</button></a></div></div>');
 			}
 		}
-	}*/
+	}
 
 	//write total forks, stars and repos into the page
 	$(".heroText .repoCount").text(totalRepos);
