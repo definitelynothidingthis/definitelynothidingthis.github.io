@@ -56,6 +56,7 @@ $(document).ready(function(){
 				} else if (title.indexOf("adruino") >= 0){
 					$(".arduinoRepo .sdkRepoStar").text(stars);
 					$(".arduinoRepo .sdkRepoFork").text(forks);
+					console.log("stars: " + stars + " forks: " + forks);
 				}
 				continue;
 			}
