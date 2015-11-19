@@ -36,8 +36,7 @@ $(document).ready(function(){
 
 			//if title contains sdk hide it (since we hardcode them)
 			if (sortTitle.indexOf("sdk") >= 0) {
-				//-> if matches hardcoded repo title(ex arduino-SDK.indexof("arduino") then use these forks/stars/description
-				//else
+				//if title matches hardcoded repo title then use these forks/stars
 				console.log(sortTitle);
 				if (title.indexOf("ios") >= 0){
 					$(".iosRepo .sdkRepoStar").text(stars);
