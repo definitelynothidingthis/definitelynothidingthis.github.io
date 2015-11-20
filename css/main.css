@@ -49,7 +49,7 @@ html:not(.inlinesvg) .header, html:not(.csstransforms) .header {
     height: 360px; }
 
 .container {
-  max-width: 1080px;
+  max-width: 1040px;
   width: 100%;
   margin: 0 auto;
   position: relative; }
@@ -81,7 +81,7 @@ h1 {
   font-family: 'alrightRegular';
   letter-spacing: 2px;
   line-height: 1.5; }
-  @media screen and (max-width: 1080px) {
+  @media screen and (max-width: 1040px) {
     h1 {
       font-size: 48px; } }
   @media screen and (max-width: 600px) {
@@ -185,7 +185,7 @@ nav {
     height: 56px;
     width: 56px;
     margin: 12px 0px; }
-    @media screen and (max-width: 1080px) {
+    @media screen and (max-width: 1040px) {
       nav .logo {
         width: 48px;
         height: 48px; } }
@@ -210,12 +210,12 @@ nav {
       letter-spacing: 0.3px; }
       nav ul li:last-of-type {
         margin: 0px; }
-      @media screen and (max-width: 1080px) {
+      @media screen and (max-width: 1040px) {
         nav ul li {
           line-height: 72px; } }
     nav ul ul {
       padding-left: 16px; }
-  @media screen and (max-width: 1080px) {
+  @media screen and (max-width: 1040px) {
     nav {
       top: 8px; } }
   @media screen and (max-width: 600px) {
@@ -248,7 +248,7 @@ nav {
     .header .heroText img.headerText {
       width: 65%;
       max-width: 640px; }
-      @media screen and (max-width: 1080px) {
+      @media screen and (max-width: 1040px) {
         .header .heroText img.headerText {
           width: 50%; } }
       @media screen and (max-width: 600px) {
@@ -261,7 +261,7 @@ nav {
       color: #169CEE; }
       .header .heroText h2 .subheadSection {
         margin: 0px 32px; }
-        @media screen and (max-width: 1080px) {
+        @media screen and (max-width: 1040px) {
           .header .heroText h2 .subheadSection {
             margin: 0px 24px; } }
         @media screen and (max-width: 600px) {
@@ -545,7 +545,7 @@ section {
 .repo {
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-bottom: 32px;
+  margin-bottom: 48px;
   background: #ffffff;
   float: left;
   border-radius: 4px;
@@ -557,7 +557,7 @@ section {
   margin-right: calc(48px); }
   .repo:nth-of-type(3n) {
     margin-right: 0px; }
-    @media screen and (max-width: 1080px) {
+    @media screen and (max-width: 1040px) {
       .repo:nth-of-type(3n) {
         margin-right: 36px; } }
   .repo h4 {

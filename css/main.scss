@@ -24,7 +24,7 @@ $white: #ffffff;
 
 //breakpoints
 $hugeWidth: 1440px;
-$largeWidth: 1080px;
+$largeWidth: 1040px;
 $mediumWidth: 720px;
 $smallWidth: 600px;
 $tinyWidth: 480px;
@@ -555,7 +555,7 @@ section{
 .repo{
     overflow: hidden;
     text-overflow: ellipsis;
-    margin-bottom: 32px;
+    margin-bottom: 48px;
     background: $white;
     float: left;
     border-radius: 4px;
