@@ -59,7 +59,7 @@ $(document).ready(function(){
 				} else if (sortTitle.includes("android") === true){
 					$(".androidRepo .sdkRepoStar").text(stars);
 					$(".androidRepo .sdkRepoFork").text(forks);
-				} else if (sortTitle.includes("java") === true){
+				} else if (sortTitle.includes("javascript") === true || sortTitle.includes("js") === true){
 					$(".javascriptRepo .sdkRepoStar").text(stars);
 					$(".javascriptRepo .sdkRepoFork").text(forks);
 					console.log("javascript");
