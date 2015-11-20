@@ -32,7 +32,8 @@ html, body {
   color: #333333;
   font-size: 100%;
   background: #ffffff;
-  font-family: 'alrightRegular'; }
+  font-family: 'alrightRegular';
+  font-weight: 400; }
 
 html:not(.inlinesvg) svg, html:not(.inlinesvg) .skyline, html:not(.csstransforms) svg, html:not(.csstransforms) .skyline {
   display: none; }
@@ -144,7 +145,7 @@ h6 {
   font-size: 16px;
   line-height: 20px;
   letter-spacing: 0.2px;
-  margin: 0px 0px 48px 0px;
+  margin: 0px auto 48px auto;
   color: #66637A;
   max-width: 720px;
   text-align: center; }
