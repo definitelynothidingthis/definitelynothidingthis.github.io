@@ -51,7 +51,7 @@ $(document).ready(function(){
 
 			//if title contains sdk hide it (since we hardcode them)
 			if (sortTitle.indexOf("sdk") >= 0) {
-				console.log("cats");
+				console.log(sortTitle);
 				//if title matches hardcoded repo title then use these forks/stars
 				if (sortTitle.includes("ios") === true){
 					$(".iosRepo .sdkRepoStar").text(stars);
@@ -59,14 +59,14 @@ $(document).ready(function(){
 				} else if (sortTitle.includes("android") === true){
 					$(".androidRepo .sdkRepoStar").text(stars);
 					$(".androidRepo .sdkRepoFork").text(forks);
-				} else if (sortTitle.includes("javas") === true){
+				} else if (sortTitle.includes("java") === true){
 					$(".javascriptRepo .sdkRepoStar").text(stars);
 					$(".javascriptRepo .sdkRepoFork").text(forks);
 					console.log("javascript");
 				} else if (sortTitle.includes("php") === true){
 					$(".phpRepo .sdkRepoStar").text(stars);
 					$(".phpRepo .sdkRepoFork").text(forks);
-				} else if (sortTitle.includes(".net") === true){
+				} else if (sortTitle.includes("net") === true){
 					$(".xamarinRepo .sdkRepoStar").text(stars);
 					$(".xamarinRepo .sdkRepoFork").text(forks);
 					console.log(".net");
