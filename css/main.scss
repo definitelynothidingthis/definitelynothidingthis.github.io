@@ -178,11 +178,11 @@ h3{
     font-size: 22px;
     line-height: 24px;
     color: $mainBlue;
-    font-family: 'alrightRegular';
+    font-family: "alrightBold";
     letter-spacing: -0.2px;
     margin: 48px 0px 8px 0px;
     text-align: center;
-    font-weight: 300;
+    font-weight: 600;
     span{
         font-family: 'din';
         color: $mediumGrey;
@@ -223,7 +223,7 @@ h6{
     letter-spacing: 0.2px;
     margin: 0px auto 48px auto;
     color: $purpleText;
-    max-width: $mediumWidth;
+    max-width: $smallWidth;
     text-align: center;
     font-weight: 300;
 }
