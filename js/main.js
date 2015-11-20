@@ -80,6 +80,12 @@ $(document).ready(function(){
 
 			//sort non-SDK repos into categories
 
+			if (sortTitle.includes("todo") === true){
+				console.log("todo");
+			} else {
+				console.log("not todo");
+			}
+
 			//SOCIAL CATEGORY
 			//  if name includes facebook, twitter
 			if (sortTitle.includes("facebook") === true || sortTitle.includes("twitter") === true){
@@ -87,7 +93,7 @@ $(document).ready(function(){
 				$("section.socialRepos").append('<div class="repo"><div class="repoTitle"><h4>' + title + '</h4><p><span><img src="img/starsDark.svg" alt="" class="icon">' + stars + '</span><span><img src="img/forksDark.svg" alt="" class="icon">' + forks + '</span><span>' + language + '</span></p></div><div class="repoDescription"><p>' + description + '</p></div><div class="repoButton"><a href="' + url + '" target="_blank"><button class="outline">View on Github</button></a></div></div>');
 			
 			//TUTORIALS CATEGORY
-			//  if name tutorial, or demo
+			//  if name tutorial
 			} else if (sortTitle.includes("tutorial") === true){
 				//write them to the page
 				$("section.tutorials").append('<div class="repo"><div class="repoTitle"><h4>' + title + '</h4><p><span><img src="img/starsDark.svg" alt="" class="icon">' + stars + '</span><span><img src="img/forksDark.svg" alt="" class="icon">' + forks + '</span><span>' + language + '</span></p></div><div class="repoDescription"><p>' + description + '</p></div><div class="repoButton"><a href="' + url + '" target="_blank"><button class="outline">View on Github</button></a></div></div>');
