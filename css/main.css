@@ -95,7 +95,8 @@ h1 {
 
 h2 {
   font-size: 20px;
-  font-family: "alrightBold";
+  font-family: 'din';
+  font-weight: 300;
   letter-spacing: 0.2px;
   line-height: 24px; }
   @media screen and (max-width: 720px) {
@@ -397,7 +398,6 @@ nav {
         stroke-miterlimit: 10; }
       .headerIllustration svg.headerLeft .apps rect, .headerIllustration svg.headerLeft .apps path {
         transform: scale(0.45);
-        transform-box: fill-box;
         transform-origin: 50% 50%; }
       .headerIllustration svg.headerLeft .apps rect {
         transform: translateY(100%) scale(0.45); }
@@ -524,17 +524,14 @@ nav {
       .headerIllustration svg.headerRight .st19 {
         fill: #4BBC6E; }
       .headerIllustration svg.headerRight .hoistWheels g {
-        transform-box: fill-box;
         transform-origin: 50% 50%; }
       .headerIllustration svg.headerRight .phone2ColorContainer {
         clip-path: url(#phone2ScreenMask); }
       .headerIllustration svg.headerRight .phone3ColorContainer {
         clip-path: url(#phone3ScreenMask); }
       .headerIllustration svg.headerRight .phone2Color, .headerIllustration svg.headerRight .phone3Color {
-        transform-box: fill-box;
         transform-origin: 50% 50%; }
     .headerIllustration svg .pushOne {
-      transform-box: fill-box;
       transform-origin: 25% 0%; }
   @media screen and (max-width: 600px) {
     .headerIllustration {
