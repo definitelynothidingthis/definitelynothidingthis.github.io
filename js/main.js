@@ -75,7 +75,6 @@ $(document).ready(function(){
 					$(".embeddedRepo .sdkRepoStar").text(stars);
 					$(".embeddedRepo .sdkRepoFork").text(forks);
 				}
-				continue;
 			}
 
 			//Sort non-SDK repos into categories
