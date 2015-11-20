@@ -586,7 +586,7 @@ section{
 .SDKLogo{
     height: 48px;
     position: absolute;
-    top: 10px;
+    top: 11px;
     right: 16px;
 }
 .repoTitle{
@@ -648,16 +648,17 @@ section{
 .repoDescription{
     border-top: 1px solid $purpleBorder;
     border-bottom: 1px solid $purpleBorder;
-    height: 80px; //max 2 lines high,  104 = 3 lines
+    height: 72px; //24px line height * 2 + 12px padding * 2
     overflow: hidden;
     text-overflow: ellipsis;
     //hide overflowing text and limit to two lines
-    border-bottom: 16px $white solid;
+    border-bottom: 12px $white solid;
     p{
         font-size: 14px;
+        line-height: 24px;
         overflow: hidden;
         color: $purpleText;
-        padding: 16px;
+        padding: 12px 16px;
         margin: 0px;
         opacity: 0.5;
     }
