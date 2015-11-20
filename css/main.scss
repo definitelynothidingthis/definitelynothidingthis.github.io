@@ -462,6 +462,7 @@ nav{
             .apps{
                 rect, path{
                     transform: scale(0.45);
+                    transform-box: fill-box;
                     transform-origin: 50% 50%;
                 }
                 rect{
@@ -519,6 +520,7 @@ nav{
             .st18{fill:none;stroke:#3A3A59;stroke-width:8;stroke-miterlimit:10;}
             .st19{fill: #4BBC6E;}
             .hoistWheels g{
+                transform-box: fill-box;
                 transform-origin: 50% 50%;
             }
             .phone2ColorContainer{
@@ -528,11 +530,13 @@ nav{
                 clip-path:url(#phone3ScreenMask);
             }
             .phone2Color, .phone3Color{
+                transform-box: fill-box;
                 transform-origin: 50% 50%;
 
             }
         }
         .pushOne{
+            transform-box: fill-box;
             transform-origin: 25% 0%;
         }
     }
