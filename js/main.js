@@ -47,31 +47,31 @@ $(document).ready(function(){
 
 			//make camelcase into spaces
 			title = unCamelCase(title);
-			console.log(unCamelCase(title));
 			//***should also ignore iOS, github and OAuth
 
 			//if title contains sdk hide it (since we hardcode them)
-			if (sortTitle.includes("sdk") === true) {
+			if (sortTitle.indexOf("sdk") >= 0) {
+				console.log("sdk");
 				//if title matches hardcoded repo title then use these forks/stars
-				if (sortTitle.indexOf("ios") >= 0){
+				if (sortTitle.includes("ios") === true){
 					$(".iosRepo .sdkRepoStar").text(stars);
 					$(".iosRepo .sdkRepoFork").text(forks);
-				} else if (sortTitle.indexOf("android") >= 0){
+				} else if (sortTitle.includes("android") === true){
 					$(".androidRepo .sdkRepoStar").text(stars);
 					$(".androidRepo .sdkRepoFork").text(forks);
-				} else if (sortTitle.indexOf("javascript") >= 0){
+				} else if (sortTitle.includes("javascript") === true){
 					$(".javascriptRepo .sdkRepoStar").text(stars);
 					$(".javascriptRepo .sdkRepoFork").text(forks);
-				} else if (sortTitle.indexOf("php") >= 0){
+				} else if (sortTitle.includes("php") === true){
 					$(".phpRepo .sdkRepoStar").text(stars);
 					$(".phpRepo .sdkRepoFork").text(forks);
-				} else if (sortTitle.indexOf("xamarin") >= 0){
+				} else if (sortTitle.includes("xamarin") === true){
 					$(".xamarinRepo .sdkRepoStar").text(stars);
 					$(".xamarinRepo .sdkRepoFork").text(forks);
-				} else if (sortTitle.indexOf("arduino") >= 0){
+				} else if (sortTitle.includes("arduino") === true){
 					$(".arduinoRepo .sdkRepoStar").text(stars);
 					$(".arduinoRepo .sdkRepoFork").text(forks);
-				} else if (sortTitle.indexOf("embedded") >= 0){
+				} else if (sortTitle.includes("embedded") === true){
 					$(".embeddedRepo .sdkRepoStar").text(stars);
 					$(".embeddedRepo .sdkRepoFork").text(forks);
 				}
