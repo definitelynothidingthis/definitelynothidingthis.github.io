@@ -55,6 +55,9 @@ $(document).ready(function(){
 				} else if (sortTitle.includes("arduino") === true){
 					$(".arduinoRepo .sdkRepoStar").text(stars);
 					$(".arduinoRepo .sdkRepoFork").text(forks);
+				} else if (sortTitle.includes("embedded") === true){
+					$(".embeddedRepo .sdkRepoStar").text(stars);
+					$(".embeddedRepo .sdkRepoFork").text(forks);
 				}
 				continue;
 			}
