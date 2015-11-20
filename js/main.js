@@ -10,6 +10,17 @@ $(document).ready(function(){
 	var totalStars = 0,
 		totalForks = 0,
 		totalRepos = 0;
+
+	function unCamelCase(str){
+    	return str
+        	// insert a space between lower & upper
+        	.replace(/([a-z])([A-Z])/g, '$1 $2')
+        	// space before last upper in a sequence followed by lower
+        	.replace(/\b([A-Z]+)([A-Z])([a-z])/, '$1 $2$3')
+        	// uppercase the first character
+        	.replace(/^./, function(str){ return str.toUpperCase(); });
+	}
+
 	if (gitJson){
 		for (var j = 0; j < gitJson.length; j++) {
 			var title 		= gitJson[j].name,
@@ -35,8 +46,8 @@ $(document).ready(function(){
 			title = title.replace(/-/g, ' ');
 
 			//make camelcase into spaces
-			title.replace(/([A-Z])/g, ' $1').replace(/^./, function(str){ title = str.toUpperCase(); });
-			console.log("cats");
+			title = unCamelCase(title);
+			console.log(unCamelCase(title));
 
 			//if title contains sdk hide it (since we hardcode them)
 			if (sortTitle.includes("sdk") === true) {
