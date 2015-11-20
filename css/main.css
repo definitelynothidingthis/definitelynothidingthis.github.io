@@ -638,7 +638,7 @@ section {
     opacity: 0.5; }
 
 .repoButton {
-  padding: 16px;
+  padding: 12px 16px;
   background: rgba(22, 156, 238, 0.03);
   border-top: 1px solid #E0E0EA;
   margin-top: -1px; }
