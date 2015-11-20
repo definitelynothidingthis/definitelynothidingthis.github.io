@@ -262,7 +262,8 @@ nav {
     top: 22.5%;
     left: 0px;
     text-align: center;
-    width: 100%; }
+    width: 100%;
+    background: red; }
     .header .heroText img.headerText {
       width: 65%;
       max-width: 640px; }
