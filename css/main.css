@@ -553,8 +553,8 @@ section {
   border: 1px solid #E0E0EA;
   width: 33.333333%;
   margin-right: 0px;
-  width: calc(33.333333% - 24px);
-  margin-right: calc(36px); }
+  width: calc(33.333333% - 32px);
+  margin-right: calc(48px); }
   .repo:nth-of-type(3n) {
     margin-right: 0px; }
     @media screen and (max-width: 1080px) {
@@ -624,11 +624,12 @@ section {
 .repoDescription {
   border-top: 1px solid #E0E0EA;
   border-bottom: 1px solid #E0E0EA;
-  height: 104px;
+  height: 80px;
   overflow: hidden;
   text-overflow: ellipsis;
   border-bottom: 16px #ffffff solid; }
   .repoDescription p {
+    font-size: 14px;
     overflow: hidden;
     color: #66637A;
     padding: 16px;

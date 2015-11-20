@@ -78,13 +78,7 @@ $(document).ready(function(){
 				continue;
 			}
 
-			//sort non-SDK repos into categories
-
-			if (sortTitle.includes("todo") === true){
-				console.log("todo");
-			} else {
-				console.log("not todo");
-			}
+			//Sort non-SDK repos into categories
 
 			//SOCIAL CATEGORY
 			//  if name includes facebook, twitter

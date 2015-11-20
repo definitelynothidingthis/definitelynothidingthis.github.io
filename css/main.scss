@@ -565,8 +565,8 @@ section{
     width: 33.333333%;
     margin-right: 0px;
     //if calc supported make it sexy
-    width: calc(33.333333% - 24px);
-    margin-right: calc(36px);
+    width: calc(33.333333% - 32px);
+    margin-right: calc(48px);
     &:nth-of-type(3n){
         margin-right: 0px;
         @media screen and (max-width: $largeWidth) {
@@ -648,12 +648,13 @@ section{
 .repoDescription{
     border-top: 1px solid $purpleBorder;
     border-bottom: 1px solid $purpleBorder;
-    height: 104px; //max 3 lines high,  80 = 2 lines
+    height: 80px; //max 2 lines high,  104 = 3 lines
     overflow: hidden;
     text-overflow: ellipsis;
     //hide overflowing text and limit to two lines
     border-bottom: 16px $white solid;
     p{
+        font-size: 14px;
         overflow: hidden;
         color: $purpleText;
         padding: 16px;
