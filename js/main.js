@@ -78,7 +78,7 @@ $(document).ready(function(){
 			}
 
 			//sort non-SDK repos into categories
-			
+
 			//SOCIAL CATEGORY
 			//  if name includes facebook, twitter
 			if (sortTitle.includes("facebook") === true || sortTitle.includes("twitter") === true){
@@ -92,8 +92,8 @@ $(document).ready(function(){
 				$("section.tutorials").append('<div class="repo"><div class="repoTitle"><h4>' + title + '</h4><p><span><img src="img/starsDark.svg" alt="" class="icon">' + stars + '</span><span><img src="img/forksDark.svg" alt="" class="icon">' + forks + '</span><span>' + language + '</span></p></div><div class="repoDescription"><p>' + description + '</p></div><div class="repoButton"><a href="' + url + '" target="_blank"><button class="outline">View on Github</button></a></div></div>');
 			
 			//SAMPLES CATEGORY
-			//  if name includes facebook, twitter
-			} else if (sortTitle.includes("tutorial") === true || sortTitle.includes("any") === true || sortTitle.includes("demo") === true || sortTitle.includes("todo") === true){
+			//  if name any
+			} else if (sortTitle.includes("any") === true){
 				//write them to the page
 				$("section.sampleApps").append('<div class="repo"><div class="repoTitle"><h4>' + title + '</h4><p><span><img src="img/starsDark.svg" alt="" class="icon">' + stars + '</span><span><img src="img/forksDark.svg" alt="" class="icon">' + forks + '</span><span>' + language + '</span></p></div><div class="repoDescription"><p>' + description + '</p></div><div class="repoButton"><a href="' + url + '" target="_blank"><button class="outline">View on Github</button></a></div></div>');
 			
