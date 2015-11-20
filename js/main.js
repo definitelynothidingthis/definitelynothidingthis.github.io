@@ -42,13 +42,19 @@ $(document).ready(function(){
 			totalStars = totalStars + stars;
 			totalForks = totalForks + forks;
 				
+
+			//Clean up formating on title
+
 			//replace dashes with spaces
 			title = title.replace(/-/g, ' ');
-
 			//make camelcase into spaces
 			title = unCamelCase(title);
-			//***should also ignore iOS, github and OAuth
+			//fix unCamelCase for unique cases like iOS or OAuth
+			console.log("ditto");
+			title = title.replace("i OS", "iOS");
+			title = title.replace("O Auth", "OAuth");
 
+			//Sort SDK Repos
 			//if title contains sdk hide it (since we hardcode them)
 			if (sortTitle.indexOf("sdk") >= 0) {
 				//if title matches hardcoded repo title then use these forks/stars
