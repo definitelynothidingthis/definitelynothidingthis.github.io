@@ -77,10 +77,28 @@ $(document).ready(function(){
 				continue;
 			}
 
-			//if name contains "tutorial", "any", "demo" or "todo"
-			if (sortTitle.indexOf("tutorial") >= 0 || sortTitle.indexOf("any") >= 0 || sortTitle.indexOf("demo") >= 0 || sortTitle.indexOf("todo") >= 0){
+			//sort non-SDK repos into categories
+			
+			//SOCIAL CATEGORY
+			//  if name includes facebook, twitter
+			if (sortTitle.includes("facebook") === true || sortTitle.includes("twitter") === true){
+				//write them to the page
+				$("section.socialRepos").append('<div class="repo"><div class="repoTitle"><h4>' + title + '</h4><p><span><img src="img/starsDark.svg" alt="" class="icon">' + stars + '</span><span><img src="img/forksDark.svg" alt="" class="icon">' + forks + '</span><span>' + language + '</span></p></div><div class="repoDescription"><p>' + description + '</p></div><div class="repoButton"><a href="' + url + '" target="_blank"><button class="outline">View on Github</button></a></div></div>');
+			
+			//TUTORIALS CATEGORY
+			//  if name tutorial, or demo
+			} else if (sortTitle.includes("tutorial") === true || sortTitle.includes("demo") === true){
+				//write them to the page
+				$("section.tutorials").append('<div class="repo"><div class="repoTitle"><h4>' + title + '</h4><p><span><img src="img/starsDark.svg" alt="" class="icon">' + stars + '</span><span><img src="img/forksDark.svg" alt="" class="icon">' + forks + '</span><span>' + language + '</span></p></div><div class="repoDescription"><p>' + description + '</p></div><div class="repoButton"><a href="' + url + '" target="_blank"><button class="outline">View on Github</button></a></div></div>');
+			
+			//SAMPLES CATEGORY
+			//  if name includes facebook, twitter
+			} else if (sortTitle.includes("tutorial") === true || sortTitle.includes("any") === true || sortTitle.includes("demo") === true || sortTitle.includes("todo") === true){
 				//write them to the page
 				$("section.sampleApps").append('<div class="repo"><div class="repoTitle"><h4>' + title + '</h4><p><span><img src="img/starsDark.svg" alt="" class="icon">' + stars + '</span><span><img src="img/forksDark.svg" alt="" class="icon">' + forks + '</span><span>' + language + '</span></p></div><div class="repoDescription"><p>' + description + '</p></div><div class="repoButton"><a href="' + url + '" target="_blank"><button class="outline">View on Github</button></a></div></div>');
+			
+			//OTHER CATEGORY
+			//   ...everything else
 			} else {
 				//write them to the page
 				$("section.other").append('<div class="repo"><div class="repoTitle"><h4>' + title + '</h4><p><span><img src="img/starsDark.svg" alt="" class="icon">' + stars + '</span><span><img src="img/forksDark.svg" alt="" class="icon">' + forks + '</span><span>' + language + '</span></p></div><div class="repoDescription"><p>' + description + '</p></div><div class="repoButton"><a href="' + url + '" target="_blank"><button class="outline">View on Github</button></a></div></div>');
