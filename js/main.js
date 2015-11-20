@@ -36,6 +36,7 @@ $(document).ready(function(){
 
 			//make camelcase into spaces
 			title.replace(/([A-Z])/g, ' $1').replace(/^./, function(str){ title = str.toUpperCase(); });
+			console.log("cats");
 
 			//if title contains sdk hide it (since we hardcode them)
 			if (sortTitle.includes("sdk") === true) {
