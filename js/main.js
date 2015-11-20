@@ -48,7 +48,7 @@ $(document).ready(function(){
 			//make camelcase into spaces
 			title = unCamelCase(title);
 			console.log(unCamelCase(title));
-			//***should also ignore iOS and OAuth
+			//***should also ignore iOS, github and OAuth
 
 			//if title contains sdk hide it (since we hardcode them)
 			if (sortTitle.includes("sdk") === true) {
@@ -88,13 +88,13 @@ $(document).ready(function(){
 			
 			//TUTORIALS CATEGORY
 			//  if name tutorial, or demo
-			} else if (sortTitle.includes("tutorial") === true || sortTitle.includes("demo") === true){
+			} else if (sortTitle.includes("tutorial") === true){
 				//write them to the page
 				$("section.tutorials").append('<div class="repo"><div class="repoTitle"><h4>' + title + '</h4><p><span><img src="img/starsDark.svg" alt="" class="icon">' + stars + '</span><span><img src="img/forksDark.svg" alt="" class="icon">' + forks + '</span><span>' + language + '</span></p></div><div class="repoDescription"><p>' + description + '</p></div><div class="repoButton"><a href="' + url + '" target="_blank"><button class="outline">View on Github</button></a></div></div>');
 			
 			//SAMPLES CATEGORY
-			//  if name any, scrumptious, store, app, 
-			} else if (sortTitle.includes("any") === true || sortTitle.includes("scrumptious") === true || sortTitle.includes("app") === true || sortTitle.includes("store") === true || sortTitle.includes("f8") === true || sortTitle.includes("internetcar") === true){
+			//  if name todo, demo, any, scrumptious, store, f8, internetcar 
+			} else if (sortTitle.includes("todo") === true || sortTitle.includes("demo") === true || sortTitle.includes("any") === true || sortTitle.includes("scrumptious") === true || sortTitle.includes("store") === true || sortTitle.includes("f8") === true || sortTitle.includes("internetcar") === true){
 				//write them to the page
 				$("section.sampleApps").append('<div class="repo"><div class="repoTitle"><h4>' + title + '</h4><p><span><img src="img/starsDark.svg" alt="" class="icon">' + stars + '</span><span><img src="img/forksDark.svg" alt="" class="icon">' + forks + '</span><span>' + language + '</span></p></div><div class="repoDescription"><p>' + description + '</p></div><div class="repoButton"><a href="' + url + '" target="_blank"><button class="outline">View on Github</button></a></div></div>');
 			
