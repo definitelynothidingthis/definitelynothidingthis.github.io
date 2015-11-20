@@ -59,13 +59,13 @@ $(document).ready(function(){
 				} else if (sortTitle.includes("android") === true){
 					$(".androidRepo .sdkRepoStar").text(stars);
 					$(".androidRepo .sdkRepoFork").text(forks);
-				} else if (sortTitle.includes("javascript") === true){
+				} else if (sortTitle.includes("javas") === true){
 					$(".javascriptRepo .sdkRepoStar").text(stars);
 					$(".javascriptRepo .sdkRepoFork").text(forks);
 				} else if (sortTitle.includes("php") === true){
 					$(".phpRepo .sdkRepoStar").text(stars);
 					$(".phpRepo .sdkRepoFork").text(forks);
-				} else if (sortTitle.includes("xamarin") === true){
+				} else if (sortTitle.includes(".net") === true){
 					$(".xamarinRepo .sdkRepoStar").text(stars);
 					$(".xamarinRepo .sdkRepoFork").text(forks);
 				} else if (sortTitle.includes("arduino") === true){
@@ -75,7 +75,9 @@ $(document).ready(function(){
 					$(".embeddedRepo .sdkRepoStar").text(stars);
 					$(".embeddedRepo .sdkRepoFork").text(forks);
 				}
+				continue;
 			}
+			
 
 			//Sort non-SDK repos into categories
 
