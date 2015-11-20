@@ -53,25 +53,25 @@ $(document).ready(function(){
 			//if title contains sdk hide it (since we hardcode them)
 			if (sortTitle.includes("sdk") === true) {
 				//if title matches hardcoded repo title then use these forks/stars
-				if (sortTitle.includes("ios") === true){
+				if (sortTitle.indexOf("ios") >= 0){
 					$(".iosRepo .sdkRepoStar").text(stars);
 					$(".iosRepo .sdkRepoFork").text(forks);
-				} else if (sortTitle.includes("android") === true){
+				} else if (sortTitle.indexOf("android") >= 0){
 					$(".androidRepo .sdkRepoStar").text(stars);
 					$(".androidRepo .sdkRepoFork").text(forks);
-				} else if (sortTitle.includes("javascript") === true){
+				} else if (sortTitle.indexOf("javascript") >= 0){
 					$(".javascriptRepo .sdkRepoStar").text(stars);
 					$(".javascriptRepo .sdkRepoFork").text(forks);
-				} else if (sortTitle.includes("php") === true){
+				} else if (sortTitle.indexOf("php") >= 0){
 					$(".phpRepo .sdkRepoStar").text(stars);
 					$(".phpRepo .sdkRepoFork").text(forks);
-				} else if (sortTitle.includes("xamarin") === true){
+				} else if (sortTitle.indexOf("xamarin") >= 0){
 					$(".xamarinRepo .sdkRepoStar").text(stars);
 					$(".xamarinRepo .sdkRepoFork").text(forks);
-				} else if (sortTitle.includes("arduino") === true){
+				} else if (sortTitle.indexOf("arduino") >= 0){
 					$(".arduinoRepo .sdkRepoStar").text(stars);
 					$(".arduinoRepo .sdkRepoFork").text(forks);
-				} else if (sortTitle.includes("embedded") === true){
+				} else if (sortTitle.indexOf("embedded") >= 0){
 					$(".embeddedRepo .sdkRepoStar").text(stars);
 					$(".embeddedRepo .sdkRepoFork").text(forks);
 				}
