@@ -90,7 +90,7 @@ html, body{
     font-size: 100%;
     background: $background;
     font-family: 'alrightRegular';
-    font-weight: 400;
+    font-weight: 300;
 }
 
 //if transforms or svg not supported
@@ -151,6 +151,7 @@ h1{
     font-family: 'alrightRegular';
     letter-spacing: 2px;
     line-height: 1.5;
+    font-weight: 300;
     @media screen and (max-width: $largeWidth) {
         font-size: 48px;
     }
@@ -181,6 +182,7 @@ h3{
     letter-spacing: -0.2px;
     margin: 48px 0px 16px 0px;
     text-align: center;
+    font-weight: 300;
     span{
         font-family: 'din';
         color: $mediumGrey;
@@ -200,6 +202,7 @@ h4{
     line-height: 32px;
     margin: 0px;
     white-space: nowrap;
+    font-weight: 300;
 }
 h5{
     font-family: 'din';
@@ -220,6 +223,7 @@ h6{
     color: $purpleText;
     max-width: $mediumWidth;
     text-align: center;
+    font-weight: 300;
 }
 
 p{
