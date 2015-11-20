@@ -106,12 +106,12 @@ h2 {
       font-size: 14px; } }
 
 h3 {
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 22px;
+  line-height: 24px;
   color: #169CEE;
   font-family: 'alrightRegular';
   letter-spacing: -0.2px;
-  margin: 48px 0px 16px 0px;
+  margin: 48px 0px 8px 0px;
   text-align: center;
   font-weight: 300; }
   h3 span {
@@ -142,11 +142,13 @@ h5 {
   color: #169CEE;
   opacity: 0.6;
   margin-bottom: 12px;
-  line-height: 12px; }
+  line-height: 12px;
+  font-weight: 300; }
 
 h6 {
-  font-size: 16px;
-  line-height: 20px;
+  font-family: 'din';
+  font-size: 14px;
+  line-height: 16px;
   letter-spacing: 0.2px;
   margin: 0px auto 48px auto;
   color: #66637A;
