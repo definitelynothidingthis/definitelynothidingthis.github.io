@@ -31,8 +31,11 @@ $(document).ready(function(){
 			totalStars = totalStars + stars;
 			totalForks = totalForks + forks;
 				
-			//clean up variables
+			//replace dashes with spaces
 			title = title.replace(/-/g, ' ');
+
+			//make camelcase into spaces
+			title.replace(/([A-Z])/g, ' $1').replace(/^./, function(str){ title = str.toUpperCase(); });
 
 			//if title contains sdk hide it (since we hardcode them)
 			if (sortTitle.includes("sdk") === true) {

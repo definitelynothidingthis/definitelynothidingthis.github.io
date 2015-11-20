@@ -49,7 +49,7 @@ html:not(.inlinesvg) .header, html:not(.csstransforms) .header {
     height: 360px; }
 
 .container {
-  max-width: 1020px;
+  max-width: 1080px;
   width: 100%;
   margin: 0 auto;
   position: relative; }
@@ -58,8 +58,7 @@ a {
   color: #169CEE;
   text-decoration: none;
   outline: 0;
-  -webkit-transition: color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-shadow 0s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
-          transition: color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-shadow 0s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+  transition: color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-shadow 0s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
   position: relative; }
   a:focus {
     outline: 0; }
@@ -82,7 +81,7 @@ h1 {
   font-family: 'alrightRegular';
   letter-spacing: 2px;
   line-height: 1.5; }
-  @media screen and (max-width: 1020px) {
+  @media screen and (max-width: 1080px) {
     h1 {
       font-size: 48px; } }
   @media screen and (max-width: 600px) {
@@ -166,8 +165,7 @@ button, .button {
   padding: 0px 16px;
   height: 32px;
   line-height: 32px;
-  -webkit-transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-          transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+  transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
   button.outline, .button.outline {
     background: transparent;
     border: 2px solid #169CEE;
@@ -187,7 +185,7 @@ nav {
     height: 56px;
     width: 56px;
     margin: 12px 0px; }
-    @media screen and (max-width: 1020px) {
+    @media screen and (max-width: 1080px) {
       nav .logo {
         width: 48px;
         height: 48px; } }
@@ -212,12 +210,12 @@ nav {
       letter-spacing: 0.3px; }
       nav ul li:last-of-type {
         margin: 0px; }
-      @media screen and (max-width: 1020px) {
+      @media screen and (max-width: 1080px) {
         nav ul li {
           line-height: 72px; } }
     nav ul ul {
       padding-left: 16px; }
-  @media screen and (max-width: 1020px) {
+  @media screen and (max-width: 1080px) {
     nav {
       top: 8px; } }
   @media screen and (max-width: 600px) {
@@ -250,7 +248,7 @@ nav {
     .header .heroText img.headerText {
       width: 65%;
       max-width: 640px; }
-      @media screen and (max-width: 1020px) {
+      @media screen and (max-width: 1080px) {
         .header .heroText img.headerText {
           width: 50%; } }
       @media screen and (max-width: 600px) {
@@ -263,7 +261,7 @@ nav {
       color: #169CEE; }
       .header .heroText h2 .subheadSection {
         margin: 0px 32px; }
-        @media screen and (max-width: 1020px) {
+        @media screen and (max-width: 1080px) {
           .header .heroText h2 .subheadSection {
             margin: 0px 24px; } }
         @media screen and (max-width: 600px) {
@@ -369,8 +367,7 @@ nav {
       .headerIllustration svg.headerLeft .st14 {
         fill: #FFFFFF; }
       .headerIllustration svg.headerLeft .st15 {
-        -webkit-clip-path: url(#SVGID_2_);
-                clip-path: url(#SVGID_2_); }
+        clip-path: url(#SVGID_2_); }
       .headerIllustration svg.headerLeft .st16 {
         fill: none;
         stroke: #169CEE;
@@ -382,19 +379,12 @@ nav {
         stroke-width: 8;
         stroke-miterlimit: 10; }
       .headerIllustration svg.headerLeft .apps rect, .headerIllustration svg.headerLeft .apps path {
-        -webkit-transform: scale(0.45);
-            -ms-transform: scale(0.45);
-                transform: scale(0.45);
-        -webkit-transform-origin: 50% 50%;
-            -ms-transform-origin: 50% 50%;
-                transform-origin: 50% 50%; }
+        transform: scale(0.45);
+        transform-origin: 50% 50%; }
       .headerIllustration svg.headerLeft .apps rect {
-        -webkit-transform: translateY(100%) scale(0.45);
-            -ms-transform: translateY(100%) scale(0.45);
-                transform: translateY(100%) scale(0.45); }
+        transform: translateY(100%) scale(0.45); }
       .headerIllustration svg.headerLeft .apps path {
-        -webkit-transform: rotateZ(90deg) scale(0.45);
-                transform: rotateZ(90deg) scale(0.45); }
+        transform: rotateZ(90deg) scale(0.45); }
     .headerIllustration svg.headerCenter {
       left: 0px;
       right: 0px;
@@ -479,8 +469,7 @@ nav {
       .headerIllustration svg.headerRight .st11 {
         fill: #159CEE; }
       .headerIllustration svg.headerRight .st12 {
-        -webkit-clip-path: url(#hoistMaskOutter);
-                clip-path: url(#hoistMaskOutter); }
+        clip-path: url(#hoistMaskOutter); }
       .headerIllustration svg.headerRight .st13 {
         fill: none;
         stroke: #169CEE;
@@ -517,23 +506,15 @@ nav {
       .headerIllustration svg.headerRight .st19 {
         fill: #4BBC6E; }
       .headerIllustration svg.headerRight .hoistWheels g {
-        -webkit-transform-origin: 50% 50%;
-            -ms-transform-origin: 50% 50%;
-                transform-origin: 50% 50%; }
+        transform-origin: 50% 50%; }
       .headerIllustration svg.headerRight .phone2ColorContainer {
-        -webkit-clip-path: url(#phone2ScreenMask);
-                clip-path: url(#phone2ScreenMask); }
+        clip-path: url(#phone2ScreenMask); }
       .headerIllustration svg.headerRight .phone3ColorContainer {
-        -webkit-clip-path: url(#phone3ScreenMask);
-                clip-path: url(#phone3ScreenMask); }
+        clip-path: url(#phone3ScreenMask); }
       .headerIllustration svg.headerRight .phone2Color, .headerIllustration svg.headerRight .phone3Color {
-        -webkit-transform-origin: 50% 50%;
-            -ms-transform-origin: 50% 50%;
-                transform-origin: 50% 50%; }
+        transform-origin: 50% 50%; }
     .headerIllustration svg .pushOne {
-      -webkit-transform-origin: 25% 0%;
-          -ms-transform-origin: 25% 0%;
-              transform-origin: 25% 0%; }
+      transform-origin: 25% 0%; }
   @media screen and (max-width: 600px) {
     .headerIllustration {
       height: 76%; }
@@ -576,7 +557,7 @@ section {
   margin-right: calc(36px); }
   .repo:nth-of-type(3n) {
     margin-right: 0px; }
-    @media screen and (max-width: 1020px) {
+    @media screen and (max-width: 1080px) {
       .repo:nth-of-type(3n) {
         margin-right: 36px; } }
   .repo h4 {
@@ -629,8 +610,7 @@ section {
   .repoLink:hover:after {
     opacity: 1; }
   .repoLink:after {
-    -webkit-transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     content: "";
     position: absolute;
     right: 12px;
@@ -704,12 +684,9 @@ footer {
       height: 32px;
       cursor: pointer;
       margin-left: 4px;
-      -webkit-transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-              transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+      transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
       footer .socialIcons img:hover {
-        -webkit-transform: scale(1.1);
-            -ms-transform: scale(1.1);
-                transform: scale(1.1); }
+        transform: scale(1.1); }
   @media screen and (max-width: 720px) {
     footer .footerImage {
       display: none; } }
