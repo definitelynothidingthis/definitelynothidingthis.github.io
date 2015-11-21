@@ -30,7 +30,7 @@ $(document).ready(function(){
 		for (var j = 0; j < gitJson.length; j++) {
 			var title 		= gitJson[j].name,
 				sortTitle 	= title.toLowerCase(),
-				url 		= gitJson[j].git_url,
+				url 		= gitJson[j].html_url,
 				description = gitJson[j].description,
 				stars 		= parseInt(gitJson[j].stargazers_count),
 				forks 		= parseInt(gitJson[j].forks_count),
