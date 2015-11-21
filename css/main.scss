@@ -228,6 +228,9 @@ h6{
     max-width: $smallWidth;
     text-align: center;
     font-weight: 300;
+    @media screen and (max-width: $tinyWidth){
+        margin: 0px auto 24px auto;
+    }
 }
 
 p{
@@ -732,7 +735,7 @@ section{
     .repoDescription{
         top: 36px;
         left: 0px;
-        max-width: 80%;
+        max-width: 75%;
         p{
             padding-left: 24px;
         }
