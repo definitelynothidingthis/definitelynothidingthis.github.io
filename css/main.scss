@@ -10,6 +10,7 @@ $purpleBorder: #E0E0EA;
 $red: #FF395E;
 $green: #00DB7C;
 $darkBlue: #0E69A1;
+$fadedBlue: rgba(#0E69A1, 0.2);
 
 $lightGrey: #FDFAFB;
 $mediumGrey: #E0E0EA;
@@ -574,7 +575,7 @@ section{
 //general repo styles
 .repo, .repoList{
     border: 1px solid $purpleBorder;
-    background: rgba($mainBlue, 0.03);
+    background: $fadedBlue;
     overflow: hidden;
     .repoDescription{
         p{
@@ -685,7 +686,7 @@ section{
     }
     .repoButton{
         padding: 14px 16px;
-        background: rgba($mainBlue, 0.03);
+        background: $fadedBlue;
         border-top: 1px solid $purpleBorder;
         button{
             width: 100%;
@@ -702,7 +703,7 @@ section{
     max-width: 650px;
     margin: 0 auto;
     height: 72px;
-    background: rgba($mainBlue, 0.03);
+    background: $fadedBlue;
     position: relative;
     border-bottom: 0px;
     &:hover{
