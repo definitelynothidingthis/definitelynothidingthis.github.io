@@ -561,7 +561,8 @@ section {
 
 .repo, .repoList {
   border: 1px solid #E0E0EA;
-  background: rgba(22, 156, 238, 0.03); }
+  background: rgba(22, 156, 238, 0.03);
+  overflow: hidden; }
   .repo .repoDescription p, .repoList .repoDescription p {
     font-size: 14px;
     line-height: 24px;
@@ -577,7 +578,6 @@ section {
     top: 1px; }
 
 .repo {
-  overflow: hidden;
   text-overflow: ellipsis;
   margin-bottom: 48px;
   float: left;
@@ -694,6 +694,12 @@ section {
     .repoList .repoInfo span {
       float: right;
       padding-left: 16px; }
+  .repoList a {
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%; }
   .repoList:first-of-type {
     border-radius: 4px 4px 0px 0px; }
   .repoList:last-of-type {

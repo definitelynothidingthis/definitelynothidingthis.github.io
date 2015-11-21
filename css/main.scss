@@ -575,6 +575,7 @@ section{
 .repo, .repoList{
     border: 1px solid $purpleBorder;
     background: rgba($mainBlue, 0.03);
+    overflow: hidden;
     .repoDescription{
         p{
             font-size: 14px;
@@ -595,7 +596,6 @@ section{
 }
 
 .repo{
-    overflow: hidden;
     text-overflow: ellipsis;
     margin-bottom: 48px;
     float: left;
@@ -741,6 +741,13 @@ section{
             float: right;
             padding-left: 16px;
         }
+    }
+    a{
+        width: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 100%;
     }
     &:first-of-type{
         border-radius: 4px 4px 0px 0px;
