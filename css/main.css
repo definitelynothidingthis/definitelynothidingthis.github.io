@@ -660,13 +660,14 @@ section {
 
 .repoList {
   width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
   height: 72px;
   background: rgba(22, 156, 238, 0.03);
   position: relative;
   border-bottom: 0px; }
   .repoList .repoTitle, .repoList .repoDescription, .repoList .repoInfo {
     position: absolute;
-    top: 0px;
     height: 100%; }
     .repoList .repoTitle h4, .repoList .repoTitle p, .repoList .repoDescription h4, .repoList .repoDescription p, .repoList .repoInfo h4, .repoList .repoInfo p {
       line-height: 72px;
@@ -675,19 +676,22 @@ section {
       white-space: nowrap;
       padding: 0px 16px; }
   .repoList .repoTitle {
+    top: 24px;
     left: 0px;
-    width: 25%; }
+    max-width: 75%; }
     .repoList .repoTitle h4 {
       font-size: 14px;
+      line-height: 16px;
       font-family: 'alrightBold';
       color: #66637A;
       padding-left: 24px; }
   .repoList .repoDescription {
-    left: 25%;
-    width: 50%; }
+    top: 40px;
+    left: 0px;
+    max-width: 75%; }
   .repoList .repoInfo {
-    left: 75%;
-    width: 25%;
+    right: 0px;
+    max-width: 25%;
     padding-right: 16px; }
     .repoList .repoInfo p {
       white-space: nowrap; }

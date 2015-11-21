@@ -700,13 +700,14 @@ section{
 
 .repoList{
     width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
     height: 72px;
     background: rgba($mainBlue, 0.03);
     position: relative;
     border-bottom: 0px;
     .repoTitle, .repoDescription, .repoInfo{
         position: absolute;
-        top: 0px;
         height: 100%;
         h4, p{
             line-height: 72px;
@@ -717,22 +718,25 @@ section{
         }
     }
     .repoTitle{
+        top: 24px;
         left: 0px;
-        width: 100%/12*3;
+        max-width: 75%;
         h4{
             font-size: 14px;
+            line-height: 16px;
             font-family: 'alrightBold';
             color: $purpleText;
             padding-left: 24px;
         }
     }
     .repoDescription{
-        left: 100%/12*3;
-        width: 100%/12*6;
+        top: 40px;
+        left: 0px;
+        max-width: 75%;
     }
     .repoInfo{
-        left: 100%/12*9;
-        width: 100%/12*3;
+        right: 0px;
+        max-width: 25%;
         padding-right: 16px;
         p{
             white-space: nowrap;
