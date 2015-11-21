@@ -669,11 +669,9 @@ section {
   .repoList .repoTitle, .repoList .repoDescription, .repoList .repoInfo {
     position: absolute; }
     .repoList .repoTitle h4, .repoList .repoTitle p, .repoList .repoDescription h4, .repoList .repoDescription p, .repoList .repoInfo h4, .repoList .repoInfo p {
-      line-height: 72px;
       text-overflow: ellipsis;
       overflow: hidden;
-      white-space: nowrap;
-      padding: 0px 16px; }
+      white-space: nowrap; }
   .repoList .repoTitle {
     top: 16px;
     left: 0px;
@@ -687,14 +685,16 @@ section {
   .repoList .repoDescription {
     top: 40px;
     left: 0px;
-    max-width: 75%;
-    padding-left: 24px; }
+    max-width: 75%; }
+    .repoList .repoDescription p {
+      padding-left: 24px; }
   .repoList .repoInfo {
     right: 0px;
     max-width: 25%;
     padding-right: 16px; }
     .repoList .repoInfo p {
-      white-space: nowrap; }
+      white-space: nowrap;
+      line-height: 16px; }
     .repoList .repoInfo span {
       float: right;
       padding-left: 16px; }
