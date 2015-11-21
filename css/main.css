@@ -676,15 +676,15 @@ section {
       padding: 0px 16px; }
   .repoList .repoTitle {
     left: 0px;
-    width: 33.3333333333%; }
+    width: 29.1666666667%; }
     .repoList .repoTitle h4 {
       font-size: 14px;
       font-family: 'alrightBold';
       color: #66637A;
       padding-left: 24px; }
   .repoList .repoDescription {
-    left: 33.3333333333%;
-    width: 41.6666666667%; }
+    left: 29.1666666667%;
+    width: 37.5%; }
   .repoList .repoInfo {
     left: 75%;
     width: 25%;
