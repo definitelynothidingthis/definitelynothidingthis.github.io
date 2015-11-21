@@ -1,6 +1,11 @@
 /* global Parse */
 /* global console */
 /* global gitJson */
+
+//initialize parse
+Parse.initialize("vc59bNX5cbtFv4Upaz4y31IJ6zOH5uKqJbRqoSgy", "jbMROx6VuQ6wVWRur29gYcQ7o3ucD4VYdh7DoFHj");
+
+//after page load
 $(document).ready(function(){
 	"use strict";
 	   //====================================//
@@ -21,7 +26,7 @@ $(document).ready(function(){
         	.replace(/^./, function(str){ return str.toUpperCase(); });
 	}
 
-	if (gitJson){
+	if (typeof gitJson !== 'undefined'){
 		for (var j = 0; j < gitJson.length; j++) {
 			var title 		= gitJson[j].name,
 				sortTitle 	= title.toLowerCase(),
@@ -91,25 +96,25 @@ $(document).ready(function(){
 			//  if name includes facebook, twitter
 			if (sortTitle.includes("facebook") === true || sortTitle.includes("twitter") === true){
 				//write them to the page
-				$("section.socialRepos").append('<div class="repo"><div class="repoTitle"><h4>' + title + '</h4><p><span><img src="img/starsDark.svg" alt="" class="icon">' + stars + '</span><span><img src="img/forksDark.svg" alt="" class="icon">' + forks + '</span><span>' + language + '</span></p></div><div class="repoDescription"><p>' + description + '</p></div><div class="repoButton"><a href="' + url + '" target="_blank"><button class="outline">View on Github</button></a></div></div>');
+				$("section.socialRepos").append("<div class='repoList'><a href='" + url + "' target='_blank'><div class='repoTitle'><h4>Client for Parse's REST API</h4></div><div class='repoDescription'><p>" + title + "</p></div><div class='repoInfo'><p><span><img src='img/forksDark.svg' alt=' class='icon'>" + forks + "</span><span><img src='img/starsDark.svg' alt=' class='icon'>" + stars + "</span><span>" + language + "</span></p></div></a></div>");
 			
 			//TUTORIALS CATEGORY
 			//  if name tutorial
 			} else if (sortTitle.includes("tutorial") === true){
 				//write them to the page
-				$("section.tutorials").append('<div class="repo"><div class="repoTitle"><h4>' + title + '</h4><p><span><img src="img/starsDark.svg" alt="" class="icon">' + stars + '</span><span><img src="img/forksDark.svg" alt="" class="icon">' + forks + '</span><span>' + language + '</span></p></div><div class="repoDescription"><p>' + description + '</p></div><div class="repoButton"><a href="' + url + '" target="_blank"><button class="outline">View on Github</button></a></div></div>');
+				$("section.tutorials").append("<div class='repoList'><a href='" + url + "' target='_blank'><div class='repoTitle'><h4>Client for Parse's REST API</h4></div><div class='repoDescription'><p>" + title + "</p></div><div class='repoInfo'><p><span><img src='img/forksDark.svg' alt=' class='icon'>" + forks + "</span><span><img src='img/starsDark.svg' alt=' class='icon'>" + stars + "</span><span>" + language + "</span></p></div></a></div>");
 			
 			//SAMPLES CATEGORY
 			//  if name todo, demo, any, scrumptious, store, f8, internetcar 
 			} else if (sortTitle.includes("todo") === true || sortTitle.includes("demo") === true || sortTitle.includes("any") === true || sortTitle.includes("scrumptious") === true || sortTitle.includes("store") === true || sortTitle.includes("f8") === true || sortTitle.includes("internetcar") === true){
 				//write them to the page
-				$("section.sampleApps").append('<div class="repo"><div class="repoTitle"><h4>' + title + '</h4><p><span><img src="img/starsDark.svg" alt="" class="icon">' + stars + '</span><span><img src="img/forksDark.svg" alt="" class="icon">' + forks + '</span><span>' + language + '</span></p></div><div class="repoDescription"><p>' + description + '</p></div><div class="repoButton"><a href="' + url + '" target="_blank"><button class="outline">View on Github</button></a></div></div>');
+				$("section.sampleApps").append("<div class='repoList'><a href='" + url + "' target='_blank'><div class='repoTitle'><h4>Client for Parse's REST API</h4></div><div class='repoDescription'><p>" + title + "</p></div><div class='repoInfo'><p><span><img src='img/forksDark.svg' alt=' class='icon'>" + forks + "</span><span><img src='img/starsDark.svg' alt=' class='icon'>" + stars + "</span><span>" + language + "</span></p></div></a></div>");
 			
 			//OTHER CATEGORY
 			//   ...everything else
 			} else {
 				//write them to the page
-				$("section.other").append('<div class="repo"><div class="repoTitle"><h4>' + title + '</h4><p><span><img src="img/starsDark.svg" alt="" class="icon">' + stars + '</span><span><img src="img/forksDark.svg" alt="" class="icon">' + forks + '</span><span>' + language + '</span></p></div><div class="repoDescription"><p>' + description + '</p></div><div class="repoButton"><a href="' + url + '" target="_blank"><button class="outline">View on Github</button></a></div></div>');
+				$("section.other").append("<div class='repoList'><a href='" + url + "' target='_blank'><div class='repoTitle'><h4>Client for Parse's REST API</h4></div><div class='repoDescription'><p>" + title + "</p></div><div class='repoInfo'><p><span><img src='img/forksDark.svg' alt=' class='icon'>" + forks + "</span><span><img src='img/starsDark.svg' alt=' class='icon'>" + stars + "</span><span>" + language + "</span></p></div></a></div>");
 			}
 		}
 	}
