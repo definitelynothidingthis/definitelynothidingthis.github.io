@@ -665,6 +665,9 @@ section {
   background: rgba(22, 156, 238, 0.03);
   position: relative;
   border-bottom: 0px; }
+  .repoList:hover .repoTitle h4 {
+    color: #169CEE;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
   .repoList .repoTitle, .repoList .repoDescription, .repoList .repoInfo {
     position: absolute; }
     .repoList .repoTitle h4, .repoList .repoTitle p, .repoList .repoDescription h4, .repoList .repoDescription p, .repoList .repoInfo h4, .repoList .repoInfo p {
@@ -690,7 +693,7 @@ section {
     height: 100%;
     right: 0px;
     max-width: 25%;
-    padding-right: 16px; }
+    padding-right: 24px; }
     .repoList .repoInfo p {
       white-space: nowrap;
       line-height: 72px;

@@ -705,6 +705,12 @@ section{
     background: rgba($mainBlue, 0.03);
     position: relative;
     border-bottom: 0px;
+    &:hover{
+        .repoTitle h4{
+            color: $mainBlue;
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    }
     .repoTitle, .repoDescription, .repoInfo{
         position: absolute;
         h4, p{
