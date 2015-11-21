@@ -734,13 +734,13 @@ section{
     }
     .repoInfo{
         height: 100%;
-        margin: 0px;
         right: 0px;
         max-width: 25%;
         padding-right: 16px;
         p{
             white-space: nowrap;
-            line-height: 16px;
+            line-height: 72px;
+            margin: 0px;
         }
         span{
             float: right;
