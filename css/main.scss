@@ -580,9 +580,8 @@ section{
         p{
             font-size: 14px;
             overflow: hidden;
-            color: $purpleText;
+            color: rgba($purpleText, 0.5);
             margin: 0px;
-            opacity: 0.5;
         }
     }
     img.icon{
@@ -717,7 +716,6 @@ section{
     .repoTitle{
         top: 16px;
         left: 0px;
-        max-width: 75%;
         h4{
             font-size: 14px;
             line-height: 16px;
@@ -727,9 +725,9 @@ section{
         }
     }
     .repoDescription{
-        top: 40px;
+        top: 36px;
         left: 0px;
-        max-width: 75%;
+        max-width: 480px;
         p{
             padding-left: 24px;
         }

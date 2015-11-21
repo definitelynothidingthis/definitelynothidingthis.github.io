@@ -46,6 +46,13 @@ $(document).ready(function(){
 			totalRepos++;
 			totalStars = totalStars + stars;
 			totalForks = totalForks + forks;
+
+			//
+
+			if (description === "" || description === null){
+				description = "Placeholder description";
+			}
+			//
 				
 
 			//Clean up formating on title
