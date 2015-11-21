@@ -565,10 +565,8 @@ section {
   overflow: hidden; }
   .repo .repoDescription p, .repoList .repoDescription p {
     font-size: 14px;
-    line-height: 24px;
     overflow: hidden;
     color: #66637A;
-    padding: 12px 16px;
     margin: 0px;
     opacity: 0.5; }
   .repo img.icon, .repoList img.icon {
@@ -646,7 +644,9 @@ section {
     height: 72px;
     overflow: hidden;
     text-overflow: ellipsis;
-    border-bottom: 12px #ffffff solid; }
+    border-bottom: 12px #ffffff solid;
+    line-height: 24px;
+    padding: 12px 16px; }
   .repo .repoButton {
     padding: 14px 16px;
     background: rgba(22, 156, 238, 0.03);
@@ -667,8 +667,7 @@ section {
   position: relative;
   border-bottom: 0px; }
   .repoList .repoTitle, .repoList .repoDescription, .repoList .repoInfo {
-    position: absolute;
-    height: 100%; }
+    position: absolute; }
     .repoList .repoTitle h4, .repoList .repoTitle p, .repoList .repoDescription h4, .repoList .repoDescription p, .repoList .repoInfo h4, .repoList .repoInfo p {
       line-height: 72px;
       text-overflow: ellipsis;
@@ -676,7 +675,7 @@ section {
       white-space: nowrap;
       padding: 0px 16px; }
   .repoList .repoTitle {
-    top: 24px;
+    top: 16px;
     left: 0px;
     max-width: 75%; }
     .repoList .repoTitle h4 {
@@ -688,7 +687,8 @@ section {
   .repoList .repoDescription {
     top: 40px;
     left: 0px;
-    max-width: 75%; }
+    max-width: 75%;
+    padding-left: 24px; }
   .repoList .repoInfo {
     right: 0px;
     max-width: 25%;
