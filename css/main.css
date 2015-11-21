@@ -685,7 +685,7 @@ section {
   .repoList .repoDescription {
     top: 36px;
     left: 0px;
-    max-width: 400px; }
+    max-width: 80%; }
     .repoList .repoDescription p {
       padding-left: 24px; }
   .repoList .repoInfo {
