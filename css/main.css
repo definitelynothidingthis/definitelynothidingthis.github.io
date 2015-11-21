@@ -561,7 +561,7 @@ section {
 
 .repo, .repoList {
   border: 1px solid #E0E0EA;
-  background: rgba(14, 105, 161, 0.2);
+  background: rgba(14, 105, 161, 0.025);
   overflow: hidden; }
   .repo .repoDescription p, .repoList .repoDescription p {
     font-size: 14px;
@@ -661,7 +661,7 @@ section {
   max-width: 650px;
   margin: 0 auto;
   height: 72px;
-  background: rgba(14, 105, 161, 0.2);
+  background: rgba(14, 105, 161, 0.025);
   position: relative;
   border-bottom: 0px; }
   .repoList:hover .repoTitle h4 {
