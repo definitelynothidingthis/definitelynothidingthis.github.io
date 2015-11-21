@@ -730,6 +730,9 @@ section{
             font-family: 'alrightBold';
             color: $purpleText;
             padding-left: 24px;
+            @media screen and (max-width: $smallWidth){
+                padding-left: 16px;
+            }
         }
     }
     .repoDescription{
@@ -738,6 +741,9 @@ section{
         max-width: 75%;
         p{
             padding-left: 24px;
+            @media screen and (max-width: $smallWidth){
+                padding-left: 16px;
+            }
         }
     }
     .repoInfo{
@@ -754,6 +760,7 @@ section{
             padding-left: 16px;
         }
         @media screen and (max-width: $smallWidth){
+            padding-right: 16px;
             span{
                 display: none;
                 &:nth-of-type(2){
