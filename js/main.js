@@ -62,7 +62,6 @@ $(document).ready(function(){
 			//make camelcase into spaces
 			title = unCamelCase(title);
 			//fix unCamelCase for unique cases like iOS or OAuth
-			console.log("ditto");
 			title = title.replace("i OS", "iOS");
 			title = title.replace("O Auth", "OAuth");
 
@@ -79,7 +78,6 @@ $(document).ready(function(){
 				} else if (sortTitle.includes("javascript") === true || sortTitle.includes("js") === true){
 					$(".javascriptRepo .sdkRepoStar").text(stars);
 					$(".javascriptRepo .sdkRepoFork").text(forks);
-					console.log("javascript");
 				} else if (sortTitle.includes("php") === true){
 					$(".phpRepo .sdkRepoStar").text(stars);
 					$(".phpRepo .sdkRepoFork").text(forks);
@@ -176,25 +174,30 @@ $(document).ready(function(){
 		 // Phone 1 (Left)
 		//
 		//move line down to grab video
-		$(".craneLineInner").velocity({ 
-			translateY: [0, "-85%"],
+		$(".craneLine").velocity({ 
+			translateY: [0, "-25%"],
 		}, { queue: false, duration: 600, easing: [ 0.4, 0, 0.2, 1 ], complete: function(){
-			//move line anchor right
+			//move line up and right to follow video
+			$(".craneLine").velocity({ 
+				translateX: ["13%", 0],
+				translateY: ["-14.8%", 0]
+			}, { queue: false, duration: 600, delay: 200, easing: [ 0.4, 0, 0.2, 1 ] });
+			//move anchor pivot right
 			$(".cranePivot").velocity({ 
-				translateX: ["646%", 0]
+				translateX: ["13%", 0]
 			}, { queue: false, duration: 600, delay: 200, easing: [ 0.4, 0, 0.2, 1 ] });
 			//move line + video onto the phone
-			$(".craneLine").velocity({ 
-				translateY: ["-31.5%", 0],
-				translateX: ["76%", 0]
+			$(".craneVideo").velocity({ 
+				translateY: ["-14.8%", 0],
+				translateX: ["13.4%", 0]
 			}, { queue: false, duration: 600, delay: 200, easing: [ 0.4, 0, 0.2, 1 ], complete: function(){ 
 				//move the line back up away from phone
-				$(".craneLineInner").velocity({ 
-					translateY: ["-40%", 0],
+				$(".craneLine").velocity({ 
+					translateY: ["-30%", "-14.8%"],
 				}, { queue: false, duration: 800, easing: [ 0.4, 0, 0.2, 1 ] });
 				//fade + animate in apps
-				var rectApps = $(".apps rect"),
-					pathApps = $(".apps path");
+				var rectApps = $(".appRect"),
+					pathApps = $(".appSquare");
 				for (var p = 0; p < pathApps.length; p++) {
 					pathApps.eq(p).velocity({ 
 						opacity: 1,
@@ -212,8 +215,8 @@ $(document).ready(function(){
 					}, { queue: false, duration: 600, delay: ((100 * r) + (100 * p) + 400), easing: [ 0.175, 0.885, 0.320, 1.275 ] });
 				}
 				//turn screen on
-				$(".phone1Screen").velocity({ 
-					fill: "#EF3F61"
+				$(".phone1ScreenContainer").velocity({ 
+					backgroundColor: "#EF3F61"
 				}, { queue: false, duration: 600, easing: [ 0.4, 0, 0.2, 1 ] });
 			} });
 		} });
@@ -221,39 +224,37 @@ $(document).ready(function(){
 		  //
 		 // Phone 2 (Center)
 		//
-		//value of how much we have to move the line up to hide it
-		var middleLineUp = -105;
-		if (browserWidth < 600){
-			middleLineUp = -170;
-		}
-
 		//move middle line to grab push icon
-		$(".middleLineOneInner").velocity({ 
+		var pushIconTranslate = "-" + ($(".middleLineOne").height() / $(".pushOne").height() * 100) + "%";
+		$(".middleLineOne").velocity({ 
 			translateY: [0, "-105%"],
 		}, { queue: false, duration: 1200, delay: 800, easing: [ 300, 28 ], complete: function(){
-			//rotate the push icon
+			//rotate the push icon and pull it up
 			$(".pushOne").velocity({ 
+				translateY: [pushIconTranslate, 0]
+			}, { queue: false, duration: 800, easing: [ 0.4, 0, 0.2, 1 ] })
+			//rotate push icon
+			.velocity({ 
 				rotateZ: ["12deg", "0deg"],
 			}, { queue: false, duration: 300, easing: [ 0.4, 0, 0.2, 1 ] });
-
-			//lift up the push icon
+			//lift the line back up
 			$(".middleLineOne").velocity({ 
 				translateY: ["-100%", 0],
 			}, { queue: false, duration: 800, easing: [ 0.4, 0, 0.2, 1 ], complete: function(){
 				//put the icon on the phone screen
-				$(".middleLine2").velocity({ 
-					translateY: [0, "-105%"],
+				$(".middleLine2, .push2").velocity({ 
+					y: [0, "-125%"],
 				}, { queue: false, duration: 1000, delay: 200, easing: [ 300, 28 ], complete: function(){
 					//pull the line back up
-					$(".middleLine2Inner").velocity({ 
-						translateY: [middleLineUp + "%", 0],
+					$(".middleLine2").velocity({ 
+						y: ["-125%", 0],
 					}, { queue: false, duration: 1000, delay: 200, easing: [ 300, 28 ] });
 					//turn phone screen on
-					$(".phone2Color").velocity({ 
+					$(".phone2Screen .phoneCircle").velocity({ 
 						scale: [1, 0]
 					}, { queue: false, duration: 350, easing: [ 0.25, 0.46, 0.45, 0.94 ] });
 					$(".phone2Screen").velocity({ 
-						fill: "#4BBC6E"
+						backgroundColor: "#4BBC6E"
 					}, { queue: false, duration: 150, delay: 200, easing: [ 0.4, 0, 0.2, 1 ] });
 					//change icon color
 					$(".push2 path").velocity({ 
@@ -266,16 +267,20 @@ $(document).ready(function(){
 		  //
 		 // Phone 3 (Right)
 		//
+		//move wheels with the hoist
+		$(".wheelsContainer").velocity({ 
+			translateX: [0, "100%"],
+		}, { queue: false, duration: 4400, easing: [0.39, 0.575, 0.565, 1] });
 		//drive in the hoist
-		$(".hoist").velocity({ 
+		$(".hoist, .hoistParts").velocity({ 
 			translateX: [0, "100%"],
 		}, { queue: false, duration: 4400, easing: [0.39, 0.575, 0.565, 1], complete: function(){
 			//turn screen on
-			$(".phone3Color").velocity({ 
-				scale: ["1", "0"]
+			$(".phone3Screen .phoneCircle").velocity({ 
+				scale: [1, 0]
 			}, { queue: false, duration: 350, easing: [ 0.25, 0.46, 0.45, 0.94 ] });
 			$(".phone3Screen").velocity({ 
-				fill: "#555574"
+				backgroundColor: "#555574"
 			}, { queue: false, duration: 150, delay: 200, easing: [ 0.4, 0, 0.2, 1 ] });
 			$(".analytics path").velocity({ 
 				fill: "#3A3A59"
@@ -283,13 +288,13 @@ $(document).ready(function(){
 
 			//lift hoist line up
 			$(".hoistLineInner").velocity({ 
-				translateY: ["-65%", 0]
+				y: ["-22%", 0]
 			}, { queue: false, duration: 800, easing: [ 0.4, 0, 0.2, 1 ] });
 
 		}, begin: function(){
 			//turn hoist wheels
-			$(".hoistWheels g").velocity({ 
-				rotateZ: ["-720deg", "0deg"],
+			$(".hoistWheel").velocity({ 
+				rotateZ: ["-=720deg"],
 			}, { queue: false, duration: 4400, easing: [0.39, 0.575, 0.565, 1]});
 		} });
 	}
@@ -300,14 +305,14 @@ $(document).ready(function(){
 	 // Main Scrolling Events
 	//====================================//
 	var scrollwheelActive = 0,
-		lastScrollPosition;
+		lastScrollPosition,
+		navindicatorTimeout = false;
 	function scrollAnimation(){
 		//variables
 		var scrolled 		= $(window).scrollTop();
 
 		//don't recalculate if not scrolling
 		if (lastScrollPosition === scrolled) {
-			
 			return false;
 		} else {
 
@@ -324,6 +329,25 @@ $(document).ready(function(){
 				$(".skyline").css({
 					'transform': 'translateY(' + (scrolled * 0.135) + 'px)',
 				});
+			}
+
+			//secondary nav stick/unstick
+			var secondaryNav = $(".secondaryNav");
+			if (scrolled >= $(".header").height()){
+				secondaryNav.addClass("shown");
+			} else{
+				secondaryNav.removeClass("shown");
+			}
+
+			//secondary nav indicators
+			var section = $("section");
+			for (var s = 0; s < section.length; s++) {
+				var sectionTopPos = section.eq(s).offset().top,
+					sectionHeight = section.eq(s).height();
+				if (scrolled > (sectionTopPos - 64) && scrolled < (sectionTopPos + sectionHeight - 64) && navindicatorTimeout === false){
+					$(".secondaryNav ul a").removeClass("active");
+					$(".secondaryNav ul a").eq(s).addClass("active");
+				}
 			}
 			
 	    }
@@ -350,5 +374,25 @@ $(document).ready(function(){
 		} else{
 			scrollAnimation();
 		}
+	});
+
+	  //====================================//
+	 // Anchor Tags Scroll the Page instead of Jump
+	//====================================//
+	$('a[href*=#]:not([href=#])').click(function() {
+	 	var clicked = $(this),
+	 		element = clicked.attr("href");
+	    if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') && location.hostname === this.hostname) {
+	      	$(element).velocity("scroll", { duration: 600, easing: [ 0.4, 0, 0.2, 1 ], begin: function(){
+	      		//change indicator color
+	      		$(".secondaryNav ul a").removeClass("active");
+	      		clicked.addClass("active");
+	      		//disable indicator changing from scrolling
+	      		navindicatorTimeout = true;
+	      	}, complete: function(){
+	      		//renable indicator changing from scrolling
+	      		navindicatorTimeout = false;
+	      	} });
+	    }
 	});
 });

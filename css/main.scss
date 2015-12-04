@@ -28,6 +28,7 @@ $largeWidth: 960px;
 $mediumWidth: 720px;
 $smallWidth: 600px;
 $tinyWidth: 480px;
+$smallestWidth: 400px;
 
 
   //==========================================//
@@ -41,16 +42,6 @@ $tinyWidth: 480px;
          url('../fonts/ttfah-alrightsublpwebfontuseonly-regular-webfont.ttf') format('truetype'),
          url('../fonts/ttfah-alrightsublpwebfontuseonly-regular-webfont.svg#alrightsublpwebfontuseonly-Rg') format('svg');
     font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'inputMono';
-    src: url('../fonts/InputMono-Regular.eot');
-    src: url('../fonts/InputMono-Regular.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/InputMono-Regular.woff') format('woff'),
-         url('../fonts/InputMono-Regular.ttf')  format('truetype');
-    font-weight: normal;
     font-style: normal;
 }
 
@@ -146,9 +137,9 @@ h1, h2, h3, h4, h5, h6{
 
 }
 h1{
-    color: $mainBlue;
-    font-size: 64px;
-    font-family: 'alrightRegular';
+    color: $purpleText;
+    font-size: 48px;
+    font-family: 'alrightBold';
     letter-spacing: 2px;
     line-height: 1;
     font-weight: 600;
@@ -159,7 +150,7 @@ h1{
     @media screen and (max-width: $smallWidth) {
         font-size: 32px;
     }
-    @media screen and (max-width: $tinyWidth) {
+    @media screen and (max-width: $smallestWidth) {
         font-size: 24px;
     }
 }
@@ -171,9 +162,6 @@ h2{
     line-height: 24px;
     @media screen and (max-width: $mediumWidth) {
         font-size: 16px;
-    }
-    @media screen and (max-width: $tinyWidth) {
-        font-size: 14px;
     }
 }
 h3{
@@ -193,7 +181,7 @@ h3{
         margin-left: -48px;
     }
     @media screen and (max-width: $tinyWidth){
-        font-size: 16px;
+        font-size: 18px;
         margin: 32px 0px 8px 0px;
     }
 }
@@ -223,11 +211,14 @@ h6{
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 0.2px;
-    margin: 0px auto 48px auto;
+    margin: 0px auto 32px auto;
     color: $purpleText;
     max-width: $smallWidth;
     text-align: center;
     font-weight: 300;
+    @media screen and (max-width: $smallWidth){
+        font-size: 14px;
+    }
     @media screen and (max-width: $tinyWidth){
         margin: 0px auto 24px auto;
     }
@@ -299,15 +290,27 @@ nav{
         margin: 0px;
         padding: 0px;
         pointer-events: all;
+        position: relative;
+        top: 2px; //fix the line height of din
         a{
             color: $mainBlue;
             text-decoration: none;
+            float: left;
+            margin-left: 32px;
+            &:first-of-type{
+                margin-left: 0px;
+            }
+            @media screen and (max-width: $smallestWidth) {
+                &:last-of-type{
+                    display: none;
+                }
+            }
         }
         li{
             font-family: "din";
             float: left;
             line-height: 80px;
-            margin: 0px 32px 0px 0px;
+            margin: 0px;
             padding: 0px;
             list-style: none;
             color: $mainBlue;
@@ -319,8 +322,7 @@ nav{
             }
             @media screen and (max-width: $largeWidth) {
                 line-height: 72px;
-            }
-            
+            } 
         }
         ul{
             padding-left: 16px;
@@ -334,15 +336,23 @@ nav{
         .container{
             padding: 0px 16px;
         }
+        .logo{
+            height: 40px;
+        }
+        ul li{
+            line-height: 68px;
+        }
+        ul a{
+            margin-left: 24px;
+        }
     }
     @media screen and (max-width: $tinyWidth){
         ul li{
-            font-size: 12px;
+            font-size: 14px;
             line-height: 64px;
         }
         .logo{
-            width: 40px;
-            height: 40px;
+            height: 36px;
         }
     }
 }
@@ -350,12 +360,15 @@ nav{
   //==========================================//
  // Header
 //==========================================//
+$headerheight: 74%;
+$headerheightSmall: 54%;
 .header{
     position: relative;
-    height: 78%;
+    height: $headerheight;
     max-height: 800px;
     width: 100%;
     overflow: hidden;
+    margin-bottom: 16px;
     .heroText{
         font-family: 'alrightRegular';
         color: $white;
@@ -364,20 +377,8 @@ nav{
         left: 0px;
         text-align: center;
         width: 100%;
-        img.headerText{
-            width: 65%;
-            max-width: 640px;
-            @media screen and (max-width: $largeWidth) {
-                width: 50%;
-            }
-            @media screen and (max-width: $smallWidth){
-                top: 50%;
-                width: 80%;
-                width: calc(100% - 96px);
-            }
-        }
         h2{
-            color: $mainBlue;
+            color: $purpleText;
             .subheadSection{
                 margin: 0px 32px;
                 @media screen and (max-width: $largeWidth) {
@@ -393,20 +394,31 @@ nav{
                 top: 4px;
                 height: 24px;
                 display: inline-block;
-            }
-            @media screen and (max-width: $smallWidth){
-                display: none;
+                @media screen and (max-width: $smallWidth){
+                    height: 20px;
+                }
             }
         }
         @media screen and (max-width: $smallWidth){
             position: absolute;
-            top: 35.5%;
+            top: 24%;
         }
     }
     @media screen and (max-width: $smallWidth){
-        height: 45%;
+        height: $headerheightSmall;
         .container{
             height: 100%;
+        }
+        .headerIllustration{
+            .headerLeftContainer{
+                 width: 37.170130284vh; //aspect ratio of images (68.8335746vh) * headerheight (54%)
+            }
+            .headerCenterContainer{
+                width: 30.337385744vh; //aspect ratio of images (56.18034397vh) * headerheight (54%)
+            }
+            .headerRightContainer{
+                width: 41.178673739vh; //aspect ratio of images (76.25680322vh) * headerheight (74%)
+            }
         }
     }
 }
@@ -420,6 +432,9 @@ nav{
     left: 0px;
     width: 100%;
     height: 100%;
+    .skyline{
+        height: 100%;
+    }
     .illustrationForeground{
         position: absolute;
         bottom: 0px;
@@ -427,128 +442,330 @@ nav{
         right: 0px;
         margin: auto;
         width: 100%;
-        max-width: 1440px;
+        max-width: 1200px;
         height: 100%;
-        max-height: 900px;
         overflow: visible;
     }
-    img{
-        height: 100%;
-    }
-    svg{
+    svg, img, .headerLeft, .headerCenter, .headerRight{
         height: 100%;
         position: absolute;
         bottom: 0px;
         overflow: visible;
-        &.headerLeft{
-            left: -4%;
-            .st0{fill:#169CEE;}
-            .st1{fill:#0E69A1;}
-            .st2{fill:#555574;}
-            .st3{fill:#3A3A59;}
-            .st4{fill:#EF3F61;}
-            .st5{fill:none;stroke:#3A3A59;stroke-width:8;stroke-miterlimit:10;}
-            .st6{fill:none;stroke:#0E69A1;stroke-width:8;stroke-linejoin:round;stroke-miterlimit:10;}
-            .st7{fill:none;stroke:#0E69A1;stroke-width:8;stroke-miterlimit:10;}
-            .st8{fill:none;stroke:#3A3A59;stroke-width:12;stroke-miterlimit:10;}
-            .st9{fill:none;stroke:#3A3A59;stroke-width:12;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-            .st10{fill:#4BBC6E;}
-            .st11{opacity:0.3;fill:#FFFFFF;enable-background:new;}
-            .st12{fill:none;stroke:#0E69A1;stroke-width:8;stroke-linecap:round;stroke-miterlimit:10;}
-            .st13{fill:#DB3B61;}
-            .st14{fill:#FFFFFF;}
-            .st15{clip-path:url(#SVGID_2_);}
-            .st16{fill:none;stroke:#169CEE;stroke-width:8;stroke-miterlimit:10;}
-            .st17{fill:#464661;stroke:#3A3A59;stroke-width:8;stroke-miterlimit:10;}
-            //animated things
-            .apps{
-                rect, path{
-                    transform: scale(0.45);
-                    transform-origin: 50% 50%;
-                }
-                rect{
-                    transform: translateY(100%) scale(0.45);
-                }
-                path{
-                    transform: rotateZ(90deg) scale(0.45);
-                }
-            }
-        }
-        &.headerCenter{
-            left: 0px;
+    }
+    .headerLeft{
+        left: -4%;
+    }
+    $headerLeftOriginalWidth: 880;
+    $headerOriginalHeight: 1280;
+    .headerLeftContainer{
+        width: $headerLeftOriginalWidth / $headerOriginalHeight * 0.74 * 100vh;  //aspect ratio of images (68.8335746vh) * headerheight (74%)
+        .craneLineContainer{
+            position: absolute;
             right: 0px;
-            margin: auto;
-            .st0{fill:#3A3A59;}
-            .st1{fill:#169CEE;}
-            .st2{fill:#0E69A1;}
-            .st3{fill:#F15732;}
-            .st4{opacity:0.3;fill:#FFFFFF;enable-background:new;}
-            .st5{fill:#555574;}
-            .st6{fill:none;stroke:#0E69A1;stroke-width:8;stroke-linecap:round;stroke-miterlimit:10;}
-            .st7{fill:#EF3F61;}
-            .st8{fill:#4BBC6E;}
-            .st9{fill:none;stroke:#3A3A59;stroke-width:16;stroke-linecap:round;stroke-miterlimit:10;}
-            .st10{fill:none;stroke:#0E69A1;stroke-width:8;stroke-miterlimit:10;}
-            .st11{fill:#159CEE;}
-            @media screen and (max-aspect-ratio: 5/3) {
-                opacity: 0;
-            }
-            @media screen and (max-width: $smallWidth){
-                opacity: 0;
+            bottom: 0px;
+            width: 100%;
+            height: 596 / $headerOriginalHeight * 100%;
+            overflow: hidden;
+            .craneLine{
+                position: absolute;
+                left: 0px;
+                bottom: 0px;
+                width: 100%;
+                height: 214.76510067%;
+                transform: translateY(-25%);
             }
         }
-
-        &.headerRight{
-            right: -1%;
-            .st0{fill:none;stroke:#3A3A59;stroke-width:12;stroke-miterlimit:10;}
-            .st1{fill:#3A3A59;}
-            .st2{fill:#0E69A1;}
-            .st3{fill:#169CEE;}
-            .st4{fill:#F15732;}
-            .st5{fill:#FFFFFF;}
-            .st6{fill:#555574;}
-            .st7{fill:#4BBC6E;}
-            .st8{fill:#EF3F61;}
-            .st9{fill:none;stroke:#3A3A59;stroke-width:16;stroke-linecap:round;stroke-miterlimit:10;}
-            .st10{fill:none;stroke:#0E69A1;stroke-width:8;stroke-miterlimit:10;}
-            .st11{fill:#159CEE;}
-            .st12{clip-path:url(#hoistMaskOutter);}
-            .st13{fill:none;stroke:#169CEE;stroke-width:8;stroke-miterlimit:10;}
-            .st14{fill:none;stroke:#3A3A59;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
-            .st15{fill:none;stroke:#3A3A59;stroke-width:8;stroke-linecap:round;stroke-miterlimit:10;}
-            .st16{opacity:0.3;fill:#FFFFFF;enable-background:new;}
-            .st17{fill:none;stroke:#0E69A1;stroke-width:8;stroke-linecap:round;stroke-miterlimit:10;}
-            .st18{fill:none;stroke:#3A3A59;stroke-width:8;stroke-miterlimit:10;}
-            .st19{fill: #4BBC6E;}
-            .hoistWheels g{
+        .phone1ScreenContainer{
+            position: absolute;
+            background: #555574;
+            left: 448 / $headerLeftOriginalWidth * 100%;
+            width: 177 / $headerLeftOriginalWidth * 100%;
+            height: 310 / $headerOriginalHeight * 100%;
+            bottom: 42 / $headerOriginalHeight * 100%;
+            .appSquare{
+                position: absolute;
+                width: 44 / 177 * 100%;
+                height: 44/ 310 * 100%;
+                top: 174 / 310 * 100%;
+                background: #DB3B61;
+                border-radius: 20%;
+                transform: scale(0.45);
                 transform-origin: 50% 50%;
+                transform: rotateZ(90deg) scale(0.45);
+                opacity: 0;
+                &.one{
+                    left: 12 / 177 * 100%;
+                }
+                &.two{
+                    left: 66 / 177 * 100%;
+                }
+                &.three{
+                    left: 120 / 177 * 100%;
+                }
             }
-            .phone2ColorContainer{
-                clip-path:url(#phone2ScreenMask);
-            }
-            .phone3ColorContainer{
-                clip-path:url(#phone3ScreenMask);
-            }
-            .phone2Color, .phone3Color{
+            .appRect{
+                transform: scale(0.45);
                 transform-origin: 50% 50%;
-
+                transform: rotateZ(90deg) scale(0.45);
+                opacity: 0;
+                background: #DB3B61;
+                position: absolute;
+                left: 12 / 177 * 100%;
+                width: 152 / 177 * 100%;
+                height: 15 / 310 * 100%;
+                &.one{
+                    top: 230 / 310 * 100%;
+                }
+                &.two{
+                    top: 255 / 310 * 100%;
+                }
+                &.three{
+                    top: 280/ 310 * 100%;
+                }
             }
         }
+    }
+    .headerCenter{
+        left: 0px;
+        right: 0px;
+        margin: auto;
+        .middleLineOne{
+            transform: translateY(-100%);
+        }
+        @media screen and (max-aspect-ratio: 5/3) {
+            opacity: 0;
+        }
+        @media screen and (max-width: $smallWidth){
+            opacity: 0;
+        }
+    }
+    $headerCenterOriginalWidth: 720;
+    .headerCenterContainer{
+        width: $headerCenterOriginalWidth / $headerOriginalHeight * 0.74 * 100vh; //aspect ratio of images (56.18034397vh) * headerheight (74%)
         .pushOne{
+            position: absolute;
+            left: 50 / $headerCenterOriginalWidth * 100%;
+            bottom: 86 / $headerOriginalHeight * 100%;
+            height: auto;
+            width: 112 / $headerCenterOriginalWidth * 100%;
             transform-origin: 25% 0%;
+        }
+        .middleLineOne{
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+            width: 100%;
+            height: 150%;
+        }
+    }
+    .headerRight{
+        right: -4%;
+        .st1{fill:#3A3A59;}
+        .st2{fill:#0E69A1;}
+        .st6{fill:#555574;}
+        .st7{fill:#4BBC6E;}
+        .st8{fill:#EF3F61;}
+        .st9{fill:none;stroke:#3A3A59;stroke-width:16;stroke-linecap:round;stroke-miterlimit:10;}
+        .st10{fill:none;stroke:#0E69A1;stroke-width:8;stroke-miterlimit:10;}
+        .st11{fill:#159CEE;}
+        .st13{fill:none;stroke:#169CEE;stroke-width:8;stroke-miterlimit:10;}
+    }
+    $headerRightOriginalWidth: 976;
+    .headerRightContainer{
+        width: $headerRightOriginalWidth / $headerOriginalHeight * 0.74 * 100vh; //aspect ratio of images (76.25680322vh) * headerheight (74%)
+        .svgInner{
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+        }
+        .wheelsContainer{
+            transform: translateX(100%);
+        }
+        .hoist{
+            transform: translateX(100%);
+        }
+        .hoistParts{
+            transform: translateX(100%);
+        }
+        .hoistWheel{
+            position: absolute;
+            width: 37 / $headerRightOriginalWidth * 100%;
+            height: 37 / $headerOriginalHeight * 100%;
+            bottom: 16 / $headerOriginalHeight * 100%;
+            @for $i from 1 through 5 {
+               &:nth-of-type(#{$i}) {
+                   right: (22 / $headerOriginalHeight + ($i - 1) * 92 / $headerOriginalHeight) * 100%;
+               }
+            }
+        }
+        .phoneCircle{
+            position: absolute;
+            border-radius: 50%;
+        }
+        .phone2Screen{
+            position: absolute;
+            left: 198 / $headerRightOriginalWidth * 100%;
+            bottom: 63 / $headerOriginalHeight * 100%;
+            width: 224 / $headerRightOriginalWidth * 100%;
+            height: 378 / $headerOriginalHeight * 100%;
+            background: #555574;
+            overflow: hidden;
+            .phoneCircle{
+                left: -70%;
+                right: -70%;
+                width: 240%;
+                padding-bottom: 50%;
+                top: -25%;
+                bottom: -25%;
+                background: #4BBC6E;
+                transform: scale(0);
+            }
+        }
+        .phone3Screen{
+            position: absolute;
+            left: 370 / $headerRightOriginalWidth * 100%;
+            bottom: 67 / $headerOriginalHeight * 100%;
+            width: 216 / $headerRightOriginalWidth * 100%;
+            height: 290 / $headerOriginalHeight * 100%;
+            background: #3A3A59;
+            overflow: hidden;
+            .phoneCircle{
+                left: -50%;
+                right: -50%;
+                width: 200%;
+                padding-bottom: 50%;
+                top: -25%;
+                bottom: -25%;
+                background: #555574;
+                transform: scale(0);
+            }
+        }
+    }
+    @media screen and (max-width: $largeWidth){
+        .headerLeft{
+            left: -5%;
+        }
+        & > svg, & > img, & > div{
+            transform: scale(0.75);
+            transform-origin: center bottom;
+        }
+        & > .skyline{
+            transform: scale(1);
+            height: 75%;
+        }
+    }
+}
+
+  //==========================================//
+ // Secondary Nav
+//==========================================//
+.secondaryNav{
+    width: 100%;
+    height: 48px;
+    position: relative;
+    text-align: center;
+    z-index: 99;
+    position: absolute;
+    top: $headerheight;
+    overflow: hidden;
+    .navBackground{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        border-bottom: 1px solid $purpleBorder;
+        background: $white;
+        //transform: translateY(-100%);
+        transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    ul{
+        display: inline-block;
+        margin: 0px auto;
+        padding: 0px;
+        pointer-events: all;
+        height: 48px;
+        a{
+            color: rgba($blueGrey, 0.5);
+            text-decoration: none;
+            float: left;
+            margin-left: 48px;
+            //transform: translateY(-100%);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            &.active{
+                color: $mainBlue;
+            }
+            &:hover{
+                color: $mainBlue;
+            }
+            &:first-of-type{
+                margin-left: 0px;
+            }
+            @media screen and (max-width: $largeWidth) {
+                margin-left: 32px;
+            }
+        }
+        li{
+            font-family: "din";
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            line-height: 48px;
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            font-size: 16px;
+            cursor: pointer;
+            letter-spacing: 0.2px;
+            &:last-of-type{
+                margin: 0px;
+            }
+        }
+        ul{
+            padding-left: 16px;
+        }
+    }
+    &.shown{
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        a{
+            transform: translateY(0px);
+            @for $i from 1 through 8 {
+               &:nth-of-type(#{$i}) {
+                   transition: all 0.2s cubic-bezier(0.175, 0.885, 0.320, 1.275) 0.05s*$i, color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+               }
+            }
+        }
+        .navBackground{
+            transform: translateY(0px);
+            transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
     }
     @media screen and (max-width: $smallWidth){
-        height: 76%;
-        svg.headerLeft{
-            left: 2%;
-        }
-        svg.headerRight{
-            right: 0px;
+        top: $headerheightSmall;
+        ul li{
+            font-size: 14px;
+            letter-spacing: 0.1;
         }
     }
-    @media screen and (max-aspect-ratio: 4/3) {
-        height: 65%;
+    @media screen and (max-width: $tinyWidth){
+        ul a{
+            margin-left: 24px;
+        }
+        ul li{
+            font-size: 12px;
+        }
+    }
+    @media screen and (max-width: $smallestWidth){
+        ul a{
+            margin-left: 14px;
+        }
+        ul li{
+            font-size: 10px;
+        }
     }
 }
 
@@ -565,8 +782,11 @@ section{
     position: relative;
     width: 100%;
     background: $white;
+    &:first-of-type{
+        padding-top: 32px;
+    }
     &:last-of-type{
-        margin-bottom: 128px;
+        padding-bottom: 80px;
     }
 }
 .container{
@@ -599,7 +819,7 @@ section{
     text-overflow: ellipsis;
     margin-bottom: 48px;
     float: left;
-    min-width: 240px;
+    min-width: 180px;
     border-radius: 4px;
     //if calc not supported fallback
     width: 33.333333%;
@@ -609,16 +829,12 @@ section{
     margin-right: calc(48px);
     &:nth-of-type(3n){
         margin-right: 0px;
-        @media screen and (max-width: $largeWidth) {
-            margin-right: 36px;
-        }
     }
     h4{
         color: $purpleText;
         text-overflow: ellipsis;
         overflow: hidden;
     }
-
     .SDKLogo{
         height: 48px;
         position: absolute;
@@ -696,6 +912,10 @@ section{
     @media screen and (max-width: $smallWidth){
         float: none;
         width: 100%;
+    }
+    @media screen and (max-width: $largeWidth){
+        width: calc(33.333333333% - 24px);
+        margin-right: calc(32px);
     }
 }
 
@@ -829,11 +1049,16 @@ footer{
     .socialIcons{
         float: right;
         margin-top: 2px;
-        margin-right: -8px;
+        margin-right: -4px;
+        a{
+            float: right;
+            margin-left: 4px;
+        }
         img{
             height: 32px;
+            width: 32px;
+
             cursor: pointer;
-            margin-left: 4px;
             transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
             &:hover{
                 transform: scale(1.1);
