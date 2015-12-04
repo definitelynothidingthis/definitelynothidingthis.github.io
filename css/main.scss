@@ -365,7 +365,6 @@ $headerheightSmall: 54%;
 .header{
     position: relative;
     height: $headerheight;
-    max-height: 800px;
     width: 100%;
     overflow: hidden;
     margin-bottom: 16px;
@@ -532,7 +531,7 @@ $headerheightSmall: 54%;
         .middleLineOne{
             transform: translateY(-100%);
         }
-        @media screen and (max-aspect-ratio: 5/3) {
+        @media screen and (max-aspect-ratio: 5/3) and (max-width: 1480px) {
             opacity: 0;
         }
         @media screen and (max-width: $smallWidth){
@@ -643,10 +642,7 @@ $headerheightSmall: 54%;
             }
         }
     }
-    @media screen and (max-width: $largeWidth){
-        .headerLeft{
-            left: -5%;
-        }
+    @media screen and (max-width: $largeWidth), (min-width: $largeWidth) and (max-aspect-ratio: 4/3){
         & > svg, & > img, & > div{
             transform: scale(0.75);
             transform-origin: center bottom;
@@ -654,6 +650,24 @@ $headerheightSmall: 54%;
         & > .skyline{
             transform: scale(1);
             height: 75%;
+        }
+        .headerLeft{
+            left: -24%;
+        }
+        .headerRight{
+            right: -20%;
+        }
+    }
+    @media screen and (min-width: 1480px){
+        .headerLeft{
+            left: -15%;
+        }
+        .headerRight{
+            right: -18%;
+        }
+        .headerLeft, .headerRight, .headerCenter{
+            transform: scale(0.75);
+            transform-origin: center bottom;
         }
     }
 }

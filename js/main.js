@@ -267,6 +267,24 @@ $(document).ready(function(){
 		  //
 		 // Phone 3 (Right)
 		//
+		//preset the scale of the hoist so velocity doesn't overwrite
+		function setupScale(){
+			var scaleRatio = 1;
+			if (browserWidth >= 1480){
+				scaleRatio = 0.75;
+				$(".wheelsContainer, .hoist, .hoistParts").velocity({ 
+					scale: 		[scaleRatio, scaleRatio]
+				}, { queue: false, duration: 0 });
+			} else {
+				$(".wheelsContainer, .hoist, .hoistParts").velocity({ 
+					scale: 		[scaleRatio, scaleRatio]
+				}, { queue: false, duration: 0 });
+			}
+		}
+		$(window).resize(function(){
+			setupScale();
+		});
+
 		//move wheels with the hoist
 		$(".wheelsContainer").velocity({ 
 			translateX: [0, "100%"],
