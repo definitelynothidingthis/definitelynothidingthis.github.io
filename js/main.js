@@ -46,24 +46,17 @@ $(document).ready(function(){
 			totalRepos++;
 			totalStars = totalStars + stars;
 			totalForks = totalForks + forks;
-
-			//
-
-			if (description === "" || description === null){
-				description = "Placeholder description";
-			}
-			//
 				
 
 			//Clean up formating on title
-
+			/*
 			//replace dashes with spaces
 			title = title.replace(/-/g, ' ');
 			//make camelcase into spaces
 			title = unCamelCase(title);
 			//fix unCamelCase for unique cases like iOS or OAuth
 			title = title.replace("i OS", "iOS");
-			title = title.replace("O Auth", "OAuth");
+			title = title.replace("O Auth", "OAuth");*/
 
 			//Sort SDK Repos
 			//if title contains sdk hide it (since we hardcode them)
