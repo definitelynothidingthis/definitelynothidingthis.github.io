@@ -865,6 +865,9 @@ section{
     .repoTitle{
         padding: 10px 16px;
         position: relative;
+        h4{
+            transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
         p{
             margin: 0px;
             opacity: 0.45;
@@ -951,7 +954,6 @@ section{
     &:hover{
         .repoTitle h4{
             color: $mainBlue;
-            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
     }
     .repoTitle, .repoDescription, .repoInfo{
