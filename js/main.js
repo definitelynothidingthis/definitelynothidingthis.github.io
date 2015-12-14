@@ -16,7 +16,7 @@ $(document).ready(function(){
 		totalForks = 0,
 		totalRepos = 0;
 
-	function unCamelCase(str){
+	/*function unCamelCase(str){
     	return str
         	// insert a space between lower & upper
         	.replace(/([a-z])([A-Z])/g, '$1 $2')
@@ -24,23 +24,26 @@ $(document).ready(function(){
         	.replace(/\b([A-Z]+)([A-Z])([a-z])/, '$1 $2$3')
         	// uppercase the first character
         	.replace(/^./, function(str){ return str.toUpperCase(); });
-	}
+	}*/
 
 	if (typeof gitJson !== 'undefined'){
 		for (var j = 0; j < gitJson.length; j++) {
-			var title 		= gitJson[j].name,
-				sortTitle 	= title.toLowerCase(),
-				url 		= gitJson[j].html_url,
-				description = gitJson[j].description,
-				stars 		= parseInt(gitJson[j].stargazers_count),
-				forks 		= parseInt(gitJson[j].forks_count),
-				language    = gitJson[j].language,
-				privateRepo = gitJson[j].private;
+			var title 			= gitJson[j].name,
+				sortTitle 		= title.toLowerCase(),
+				url 			= gitJson[j].html_url,
+				description 	= gitJson[j].description,
+				stars 			= parseInt(gitJson[j].stargazers_count),
+				forks 			= parseInt(gitJson[j].forks_count),
+				language    	= gitJson[j].language,
+				privateRepo 	= gitJson[j].private,
+				latestRelease 	= gitJson[j].releases_url;
 
-			//ignore private repos
-			if (privateRepo === true){
+			//ignore private repos and repos with deprecated in the name
+			if (privateRepo === true || sortTitle.includes("deprecated")){
 				continue;
 			}
+
+			console.log(latestRelease);
 
 			//keep tally of total forks, stars and repos
 			totalRepos++;
@@ -60,11 +63,21 @@ $(document).ready(function(){
 
 			//Sort SDK Repos
 			//if title contains sdk hide it (since we hardcode them)
-			if (sortTitle.indexOf("sdk") >= 0) {
+			if (sortTitle.indexOf("sdk") >= 0 || sortTitle.indexOf("parse-cli")) {
 				//if title matches hardcoded repo title then use these forks/stars
 				if (sortTitle.includes("ios") === true){
+					//ios stars/forks
 					$(".iosRepo .sdkRepoStar").text(stars);
 					$(".iosRepo .sdkRepoFork").text(forks);
+					//osx stars/forks
+					$(".osxRepo .sdkRepoStar").text(stars);
+					$(".osxRepo .sdkRepoFork").text(forks);
+					//watchos stars/forks
+					$(".watchOSRepo .sdkRepoStar").text(stars);
+					$(".watchOSRepo .sdkRepoFork").text(forks);
+					//tvos stars/forks
+					$(".tvOSRepo .sdkRepoStar").text(stars);
+					$(".tvOSRepo .sdkRepoFork").text(forks);
 				} else if (sortTitle.includes("android") === true){
 					$(".androidRepo .sdkRepoStar").text(stars);
 					$(".androidRepo .sdkRepoFork").text(forks);
@@ -75,14 +88,22 @@ $(document).ready(function(){
 					$(".phpRepo .sdkRepoStar").text(stars);
 					$(".phpRepo .sdkRepoFork").text(forks);
 				} else if (sortTitle.includes("net") === true){
+					//xamarin and dot net
 					$(".xamarinRepo .sdkRepoStar").text(stars);
 					$(".xamarinRepo .sdkRepoFork").text(forks);
+
+					//Unity
+					$(".unityRepo .sdkRepoStar").text(stars);
+					$(".unityRepo .sdkRepoFork").text(forks);
 				} else if (sortTitle.includes("arduino") === true){
 					$(".arduinoRepo .sdkRepoStar").text(stars);
 					$(".arduinoRepo .sdkRepoFork").text(forks);
 				} else if (sortTitle.includes("embedded") === true){
 					$(".embeddedRepo .sdkRepoStar").text(stars);
 					$(".embeddedRepo .sdkRepoFork").text(forks);
+				} else if (sortTitle.includes("cli") === true){
+					$(".cloudCodeRepo .sdkRepoStar").text(stars);
+					$(".cloudCodeRepo .sdkRepoFork").text(forks);
 				}
 				continue;
 			}
@@ -127,7 +148,7 @@ $(document).ready(function(){
 	//====================================//
 	//add new repo to the HTML
 	function addCommunityRepoToHTML(title, description, url){
-		$("section.community").append("<div class='repo'><div class='repoTitle'><h4>" + title + "</h4></div><div class='repoDescription'><p>" + description + "</p></div><div class='repoButton'><a href=" + url + " target='_blank'><button class='outline'>View on Github</button></a></div></div>");
+		$("section.community").append("<div class='repo'><div class='repoTitle'><h4>" + title + "</h4></div><div class='repoDescription'><p>" + description + "</p></div><div class='repoButton'><a href=" + url + " target='_blank'><button class='outline'>View on GitHub</button></a></div></div>");
 	}
 
 	//write this into the page
@@ -148,6 +169,15 @@ $(document).ready(function(){
 		error: function(error) {
 		    console.log("Error: " + error.code + " " + error.message);
 		}
+	});
+
+	  //====================================//
+	 //  expand/contract
+	//====================================//
+	$(".expandableRepoLink").click(function(){
+		var clicked = $(this);
+		$(".expandableRepoLink").not(clicked).removeClass("expanded");
+		clicked.toggleClass("expanded");
 	});
 
 	  //====================================//

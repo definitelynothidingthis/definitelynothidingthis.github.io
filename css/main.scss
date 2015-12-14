@@ -10,7 +10,7 @@ $purpleBorder: #E0E0EA;
 $red: #FF395E;
 $green: #00DB7C;
 $darkBlue: #0E69A1;
-$fadedBlue: rgba(#0E69A1, 0.025);
+$fadedBlue: rgba(#0E69A1, 0.03);
 
 $lightGrey: #FDFAFB;
 $mediumGrey: #E0E0EA;
@@ -188,7 +188,7 @@ h3{
 h4{
     font-family: 'alrightRegular';
     font-size: 18px;
-    letter-spacing: 0.2px;
+    letter-spacing: 0.6px;
     line-height: 32px;
     margin: 0px;
     white-space: nowrap;
@@ -257,9 +257,10 @@ button, .button{
     height: 32px;
     line-height: 32px;
     transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 100;
     &.outline{
         background: transparent;
-        border: 2px solid $mainBlue;
+        border: 1px solid $mainBlue;
         color: $mainBlue;
         &:hover{
             background: $mainBlue;
@@ -855,9 +856,11 @@ section{
         overflow: hidden;
     }
     .SDKLogo{
-        height: 32px;
+        height: 30px;
         position: absolute;
-        top: 20px;
+        top: 0px;
+        bottom: 0px;
+        margin: auto 0;
         right: 16px;
     }
     .repoTitle{
@@ -878,7 +881,7 @@ section{
         }
     }
     .repoLink{
-        height: 48px;
+        height: 40px;
         border-top: 1px solid $purpleBorder;
         position: relative;
         cursor: pointer;
@@ -890,26 +893,63 @@ section{
             margin-top: 0px;
         }
         p{
-            line-height: 46px;
+            line-height: 40px;
             padding: 0px 16px;
             color: $purpleText;
+            margin: 0px;
         }
-        &:hover{
+        &:not(.blankRepoLink):hover{
             &:after{
                 opacity: 1;
             }
         }
-        &:after{
+        &:not(.blankRepoLink):after{
             transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             content: "";
             position: absolute;
             right: 12px;
-            top: 12px;
+            top: 8px;
             width: 24px;
             height: 24px;
             background: url("../img/arrowRight.svg") no-repeat center;
             background-size: 100% auto;
             opacity: 0.18;
+        } 
+        &.expandableRepoLink{
+            min-height: 40px;
+            height: auto;
+            max-height: 40px;
+            overflow: hidden;
+            transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            p{
+                border-bottom: 1px solid $purpleBorder;
+            }
+            ul{
+                padding: 12px 0px;
+                margin: 0px;
+                background: rgba($purpleBorder, 0.2);
+                li{
+                    margin-left: 16px;
+                    padding-left: 12px;
+                    font-size: 14px;
+                    color: rgba($purple, 0.6);
+                    line-height: 24px;
+                    list-style: none;
+                    border-left: 1px solid $purpleBorder;
+                    transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+                    &:hover{
+                        color: $purple;
+                        border-left: 1px solid $purple;
+                    }
+                }
+            }
+            &.expanded{
+                max-height: 240px;
+                &:not(.blankRepoLink):after{
+                    transform: rotate(90deg);
+                    opacity: 1;
+                }
+            }
         }
     }
     .repoDescription{
@@ -927,17 +967,18 @@ section{
     .repoButton{
         padding: 14px 16px;
         border-top: 1px solid $purpleBorder;
+        min-height: 61px;
         button{
             width: 100%;
         }
     }
-    @media screen and (max-width: $smallWidth){
-        float: none;
-        width: 100%;
-    }
     @media screen and (max-width: $largeWidth){
         width: calc(33.333333333% - 24px);
         margin-right: calc(32px);
+    }
+    @media screen and (max-width: $smallWidth){
+        float: none;
+        width: 100%;
     }
 }
 

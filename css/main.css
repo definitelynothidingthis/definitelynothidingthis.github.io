@@ -53,6 +53,7 @@ a {
   color: #169CEE;
   text-decoration: none;
   outline: 0;
+  -webkit-transition: color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-shadow 0s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
   transition: color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-shadow 0s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
   position: relative; }
   a:focus {
@@ -122,7 +123,7 @@ h3 {
 h4 {
   font-family: 'alrightRegular';
   font-size: 18px;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.6px;
   line-height: 32px;
   margin: 0px;
   white-space: nowrap;
@@ -182,10 +183,12 @@ button, .button {
   padding: 0px 16px;
   height: 32px;
   line-height: 32px;
-  transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+  -webkit-transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 100; }
   button.outline, .button.outline {
     background: transparent;
-    border: 2px solid #169CEE;
+    border: 1px solid #169CEE;
     color: #169CEE; }
     button.outline:hover, .button.outline:hover {
       background: #169CEE;
@@ -351,7 +354,9 @@ nav {
         bottom: 0px;
         width: 100%;
         height: 214.76510067%;
-        transform: translateY(-25%); }
+        -webkit-transform: translateY(-25%);
+            -ms-transform: translateY(-25%);
+                transform: translateY(-25%); }
     .headerIllustration .headerLeftContainer .phone1ScreenContainer {
       position: absolute;
       background: #555574;
@@ -366,9 +371,15 @@ nav {
         top: 56.1290322581%;
         background: #DB3B61;
         border-radius: 20%;
-        transform: scale(0.45);
-        transform-origin: 50% 50%;
-        transform: rotateZ(90deg) scale(0.45);
+        -webkit-transform: scale(0.45);
+            -ms-transform: scale(0.45);
+                transform: scale(0.45);
+        -webkit-transform-origin: 50% 50%;
+            -ms-transform-origin: 50% 50%;
+                transform-origin: 50% 50%;
+        -webkit-transform: rotateZ(90deg) scale(0.45);
+            -ms-transform: rotate(90deg) scale(0.45);
+                transform: rotateZ(90deg) scale(0.45);
         opacity: 0; }
         .headerIllustration .headerLeftContainer .phone1ScreenContainer .appSquare.one {
           left: 6.7796610169%; }
@@ -377,9 +388,15 @@ nav {
         .headerIllustration .headerLeftContainer .phone1ScreenContainer .appSquare.three {
           left: 67.7966101695%; }
       .headerIllustration .headerLeftContainer .phone1ScreenContainer .appRect {
-        transform: scale(0.45);
-        transform-origin: 50% 50%;
-        transform: rotateZ(90deg) scale(0.45);
+        -webkit-transform: scale(0.45);
+            -ms-transform: scale(0.45);
+                transform: scale(0.45);
+        -webkit-transform-origin: 50% 50%;
+            -ms-transform-origin: 50% 50%;
+                transform-origin: 50% 50%;
+        -webkit-transform: rotateZ(90deg) scale(0.45);
+            -ms-transform: rotate(90deg) scale(0.45);
+                transform: rotateZ(90deg) scale(0.45);
         opacity: 0;
         background: #DB3B61;
         position: absolute;
@@ -397,7 +414,9 @@ nav {
     right: 0px;
     margin: auto; }
     .headerIllustration .headerCenter .middleLineOne {
-      transform: translateY(-100%); }
+      -webkit-transform: translateY(-100%);
+          -ms-transform: translateY(-100%);
+              transform: translateY(-100%); }
     @media screen and (max-aspect-ratio: 5 / 3) and (max-width: 1480px) {
       .headerIllustration .headerCenter {
         opacity: 0; } }
@@ -412,7 +431,9 @@ nav {
       bottom: 6.71875%;
       height: auto;
       width: 15.5555555556%;
-      transform-origin: 25% 0%; }
+      -webkit-transform-origin: 25% 0%;
+          -ms-transform-origin: 25% 0%;
+              transform-origin: 25% 0%; }
     .headerIllustration .headerCenterContainer .middleLineOne {
       position: absolute;
       left: 0px;
@@ -458,11 +479,17 @@ nav {
       width: 100%;
       height: 100%; }
     .headerIllustration .headerRightContainer .wheelsContainer {
-      transform: translateX(100%); }
+      -webkit-transform: translateX(100%);
+          -ms-transform: translateX(100%);
+              transform: translateX(100%); }
     .headerIllustration .headerRightContainer .hoist {
-      transform: translateX(100%); }
+      -webkit-transform: translateX(100%);
+          -ms-transform: translateX(100%);
+              transform: translateX(100%); }
     .headerIllustration .headerRightContainer .hoistParts {
-      transform: translateX(100%); }
+      -webkit-transform: translateX(100%);
+          -ms-transform: translateX(100%);
+              transform: translateX(100%); }
     .headerIllustration .headerRightContainer .hoistWheel {
       position: absolute;
       width: 3.7909836066%;
@@ -497,7 +524,9 @@ nav {
         top: -25%;
         bottom: -25%;
         background: #4BBC6E;
-        transform: scale(0); }
+        -webkit-transform: scale(0);
+            -ms-transform: scale(0);
+                transform: scale(0); }
     .headerIllustration .headerRightContainer .phone3Screen {
       position: absolute;
       left: 37.9098360656%;
@@ -514,13 +543,21 @@ nav {
         top: -25%;
         bottom: -25%;
         background: #555574;
-        transform: scale(0); }
+        -webkit-transform: scale(0);
+            -ms-transform: scale(0);
+                transform: scale(0); }
   @media screen and (max-width: 960px), (min-width: 960px) and (max-aspect-ratio: 4 / 3) {
     .headerIllustration > svg, .headerIllustration > img, .headerIllustration > div {
-      transform: scale(0.75);
-      transform-origin: center bottom; }
+      -webkit-transform: scale(0.75);
+          -ms-transform: scale(0.75);
+              transform: scale(0.75);
+      -webkit-transform-origin: center bottom;
+          -ms-transform-origin: center bottom;
+              transform-origin: center bottom; }
     .headerIllustration > .skyline {
-      transform: scale(1);
+      -webkit-transform: scale(1);
+          -ms-transform: scale(1);
+              transform: scale(1);
       height: 75%; }
     .headerIllustration .headerLeft {
       left: -24%; }
@@ -532,8 +569,12 @@ nav {
     .headerIllustration .headerRight {
       right: -18%; }
     .headerIllustration .headerLeft, .headerIllustration .headerRight, .headerIllustration .headerCenter {
-      transform: scale(0.75);
-      transform-origin: center bottom; } }
+      -webkit-transform: scale(0.75);
+          -ms-transform: scale(0.75);
+              transform: scale(0.75);
+      -webkit-transform-origin: center bottom;
+          -ms-transform-origin: center bottom;
+              transform-origin: center bottom; } }
 
 .secondaryNav {
   width: 100%;
@@ -552,6 +593,7 @@ nav {
     height: 100%;
     border-bottom: 1px solid #E0E0EA;
     background: #ffffff;
+    -webkit-transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
   .secondaryNav ul {
     display: inline-block;
@@ -564,6 +606,7 @@ nav {
       text-decoration: none;
       float: left;
       margin-left: 48px;
+      -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
       .secondaryNav ul a.active {
         color: #169CEE; }
@@ -595,25 +638,38 @@ nav {
     top: 0px;
     left: 0px; }
     .secondaryNav.shown a {
-      transform: translateY(0px); }
+      -webkit-transform: translateY(0px);
+          -ms-transform: translateY(0px);
+              transform: translateY(0px); }
       .secondaryNav.shown a:nth-of-type(1) {
+        -webkit-transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.05s, color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.05s, color 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
       .secondaryNav.shown a:nth-of-type(2) {
+        -webkit-transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s, color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s, color 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
       .secondaryNav.shown a:nth-of-type(3) {
+        -webkit-transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.15s, color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.15s, color 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
       .secondaryNav.shown a:nth-of-type(4) {
+        -webkit-transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s, color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s, color 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
       .secondaryNav.shown a:nth-of-type(5) {
+        -webkit-transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.25s, color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.25s, color 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
       .secondaryNav.shown a:nth-of-type(6) {
+        -webkit-transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s, color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s, color 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
       .secondaryNav.shown a:nth-of-type(7) {
+        -webkit-transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.35s, color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.35s, color 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
       .secondaryNav.shown a:nth-of-type(8) {
+        -webkit-transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.4s, color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.4s, color 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
     .secondaryNav.shown .navBackground {
-      transform: translateY(0px);
+      -webkit-transform: translateY(0px);
+          -ms-transform: translateY(0px);
+              transform: translateY(0px);
+      -webkit-transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
       transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
   @media screen and (max-width: 600px) {
     .secondaryNav {
@@ -652,7 +708,7 @@ section {
 
 .repo, .repoList {
   border: 1px solid #E0E0EA;
-  background: rgba(14, 105, 161, 0.025);
+  background: rgba(14, 105, 161, 0.03);
   overflow: hidden; }
   .repo .repoDescription p, .repoList .repoDescription p {
     font-size: 14px;
@@ -682,14 +738,17 @@ section {
     text-overflow: ellipsis;
     overflow: hidden; }
   .repo .SDKLogo {
-    height: 32px;
+    height: 30px;
     position: absolute;
-    top: 20px;
+    top: 0px;
+    bottom: 0px;
+    margin: auto 0;
     right: 16px; }
   .repo .repoTitle {
     padding: 10px 16px;
     position: relative; }
     .repo .repoTitle h4 {
+      -webkit-transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
     .repo .repoTitle p {
       margin: 0px;
@@ -700,7 +759,7 @@ section {
       .repo .repoTitle p span {
         margin-right: 24px; }
   .repo .repoLink {
-    height: 48px;
+    height: 40px;
     border-top: 1px solid #E0E0EA;
     position: relative;
     cursor: pointer;
@@ -710,22 +769,57 @@ section {
     .repo .repoLink:first-of-type {
       margin-top: 0px; }
     .repo .repoLink p {
-      line-height: 46px;
+      line-height: 40px;
       padding: 0px 16px;
-      color: #66637A; }
-    .repo .repoLink:hover:after {
+      color: #66637A;
+      margin: 0px; }
+    .repo .repoLink:not(.blankRepoLink):hover:after {
       opacity: 1; }
-    .repo .repoLink:after {
+    .repo .repoLink:not(.blankRepoLink):after {
+      -webkit-transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       content: "";
       position: absolute;
       right: 12px;
-      top: 12px;
+      top: 8px;
       width: 24px;
       height: 24px;
       background: url("../img/arrowRight.svg") no-repeat center;
       background-size: 100% auto;
       opacity: 0.18; }
+    .repo .repoLink.expandableRepoLink {
+      min-height: 40px;
+      height: auto;
+      max-height: 40px;
+      overflow: hidden;
+      -webkit-transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+      .repo .repoLink.expandableRepoLink p {
+        border-bottom: 1px solid #E0E0EA; }
+      .repo .repoLink.expandableRepoLink ul {
+        padding: 12px 0px;
+        margin: 0px;
+        background: rgba(224, 224, 234, 0.2); }
+        .repo .repoLink.expandableRepoLink ul li {
+          margin-left: 16px;
+          padding-left: 12px;
+          font-size: 14px;
+          color: rgba(85, 85, 114, 0.6);
+          line-height: 24px;
+          list-style: none;
+          border-left: 1px solid #E0E0EA;
+          -webkit-transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+          transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
+          .repo .repoLink.expandableRepoLink ul li:hover {
+            color: #555572;
+            border-left: 1px solid #555572; }
+      .repo .repoLink.expandableRepoLink.expanded {
+        max-height: 240px; }
+        .repo .repoLink.expandableRepoLink.expanded:not(.blankRepoLink):after {
+          -webkit-transform: rotate(90deg);
+              -ms-transform: rotate(90deg);
+                  transform: rotate(90deg);
+          opacity: 1; }
   .repo .repoDescription {
     background: #ffffff;
     border-top: 1px solid #E0E0EA;
@@ -738,24 +832,25 @@ section {
     padding: 12px 16px; }
   .repo .repoButton {
     padding: 14px 16px;
-    border-top: 1px solid #E0E0EA; }
+    border-top: 1px solid #E0E0EA;
+    min-height: 61px; }
     .repo .repoButton button {
       width: 100%; }
-  @media screen and (max-width: 600px) {
-    .repo {
-      float: none;
-      width: 100%; } }
   @media screen and (max-width: 960px) {
     .repo {
       width: calc(33.333333333% - 24px);
       margin-right: calc(32px); } }
+  @media screen and (max-width: 600px) {
+    .repo {
+      float: none;
+      width: 100%; } }
 
 .repoList {
   width: 100%;
   max-width: 650px;
   margin: 0 auto;
   height: 72px;
-  background: rgba(14, 105, 161, 0.025);
+  background: rgba(14, 105, 161, 0.03);
   position: relative;
   border-bottom: 0px; }
   .repoList:hover .repoTitle h4 {
@@ -861,9 +956,12 @@ footer {
       height: 32px;
       width: 32px;
       cursor: pointer;
+      -webkit-transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
       transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
       footer .socialIcons img:hover {
-        transform: scale(1.1); }
+        -webkit-transform: scale(1.1);
+            -ms-transform: scale(1.1);
+                transform: scale(1.1); }
   @media screen and (max-width: 720px) {
     footer .footerImage {
       display: none; } }
