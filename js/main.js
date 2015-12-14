@@ -99,7 +99,7 @@ $(document).ready(function(){
 				} else if (sortTitle.includes("embedded") === true){
 					$(".embeddedRepo .sdkRepoStar").text(stars);
 					$(".embeddedRepo .sdkRepoFork").text(forks);
-				} else if (sortTitle.includes("parse-cli") === true){
+				} else if (sortTitle.includes("parse") === true && sortTitle.includes("cli") === true){
 					$(".cloudCodeRepo .sdkRepoStar").text(stars);
 					$(".cloudCodeRepo .sdkRepoFork").text(forks);
 				}
