@@ -60,7 +60,7 @@ $(document).ready(function(){
 
 			//Sort SDK Repos
 			//if title contains sdk hide it (since we hardcode them)
-			if (sortTitle.indexOf("sdk") >= 0 || sortTitle.indexOf("parse-cli") >= 0) {
+			if (sortTitle.indexOf("sdk") >= 0 || sortTitle.indexOf("cli") >= 0) {
 				console.log(sortTitle);
 				//if title matches hardcoded repo title then use these forks/stars
 				if (sortTitle.includes("ios") === true){
@@ -99,13 +99,13 @@ $(document).ready(function(){
 				} else if (sortTitle.includes("embedded") === true){
 					$(".embeddedRepo .sdkRepoStar").text(stars);
 					$(".embeddedRepo .sdkRepoFork").text(forks);
-				} else if (sortTitle.includes("cli") === true){
+				} else if (sortTitle.includes("parse-cli") === true){
 					$(".cloudCodeRepo .sdkRepoStar").text(stars);
 					$(".cloudCodeRepo .sdkRepoFork").text(forks);
 				}
 				continue;
 			}
-			
+
 			//Sort non-SDK repos into categories
 
 			//SOCIAL CATEGORY
