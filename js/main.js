@@ -100,6 +100,7 @@ $(document).ready(function(){
 					$(".embeddedRepo .sdkRepoStar").text(stars);
 					$(".embeddedRepo .sdkRepoFork").text(forks);
 				} else if (sortTitle.includes("parse") === true && sortTitle.includes("cli") === true){
+					console.log(sortTitle);
 					$(".cloudCodeRepo .sdkRepoStar").text(stars);
 					$(".cloudCodeRepo .sdkRepoFork").text(forks);
 				}
