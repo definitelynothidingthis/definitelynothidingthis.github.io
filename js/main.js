@@ -35,15 +35,12 @@ $(document).ready(function(){
 				stars 			= parseInt(gitJson[j].stargazers_count),
 				forks 			= parseInt(gitJson[j].forks_count),
 				language    	= gitJson[j].language,
-				privateRepo 	= gitJson[j].private,
-				latestRelease 	= gitJson[j].releases_url;
+				privateRepo 	= gitJson[j].private;
 
 			//ignore private repos and repos with deprecated in the name
 			if (privateRepo === true || sortTitle.includes("deprecated")){
 				continue;
 			}
-
-			console.log(latestRelease);
 
 			//keep tally of total forks, stars and repos
 			totalRepos++;
