@@ -16,29 +16,20 @@ $(document).ready(function(){
 		totalForks = 0,
 		totalRepos = 0;
 
-	/*function unCamelCase(str){
-    	return str
-        	// insert a space between lower & upper
-        	.replace(/([a-z])([A-Z])/g, '$1 $2')
-        	// space before last upper in a sequence followed by lower
-        	.replace(/\b([A-Z]+)([A-Z])([a-z])/, '$1 $2$3')
-        	// uppercase the first character
-        	.replace(/^./, function(str){ return str.toUpperCase(); });
-	}*/
-
 	if (typeof gitJson !== 'undefined'){
 		for (var j = 0; j < gitJson.length; j++) {
 			var title 			= gitJson[j].name,
 				sortTitle 		= title.toLowerCase(),
 				url 			= gitJson[j].html_url,
+				hasIssues 		= gitJson[j].has_issues, 
 				description 	= gitJson[j].description,
 				stars 			= parseInt(gitJson[j].stargazers_count),
 				forks 			= parseInt(gitJson[j].forks_count),
 				language    	= gitJson[j].language,
 				privateRepo 	= gitJson[j].private;
 
-			//ignore private repos and repos with deprecated in the name
-			if (privateRepo === true || sortTitle.includes("deprecated")){
+			//ignore private repos and repos with issues turned off
+			if (privateRepo === true || hasIssues === false){
 				continue;
 			}
 
@@ -46,17 +37,6 @@ $(document).ready(function(){
 			totalRepos++;
 			totalStars = totalStars + stars;
 			totalForks = totalForks + forks;
-				
-
-			//Clean up formating on title
-			/*
-			//replace dashes with spaces
-			title = title.replace(/-/g, ' ');
-			//make camelcase into spaces
-			title = unCamelCase(title);
-			//fix unCamelCase for unique cases like iOS or OAuth
-			title = title.replace("i OS", "iOS");
-			title = title.replace("O Auth", "OAuth");*/
 
 			//Sort SDK Repos
 			//if title contains sdk hide it (since we hardcode them)
@@ -327,7 +307,9 @@ $(document).ready(function(){
 		} });
 	}
 
-	headerAnimation();
+	$(window).load(function(){
+		headerAnimation();
+	});
 
 	  //====================================//
 	 // Main Scrolling Events
