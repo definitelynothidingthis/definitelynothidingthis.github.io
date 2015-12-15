@@ -66,15 +66,6 @@ $(document).ready(function(){
 					//ios stars/forks
 					$(".iosRepo .sdkRepoStar").text(stars);
 					$(".iosRepo .sdkRepoFork").text(forks);
-					//osx stars/forks
-					$(".osxRepo .sdkRepoStar").text(stars);
-					$(".osxRepo .sdkRepoFork").text(forks);
-					//watchos stars/forks
-					$(".watchOSRepo .sdkRepoStar").text(stars);
-					$(".watchOSRepo .sdkRepoFork").text(forks);
-					//tvos stars/forks
-					$(".tvOSRepo .sdkRepoStar").text(stars);
-					$(".tvOSRepo .sdkRepoFork").text(forks);
 				} else if (sortTitle.includes("android") === true){
 					$(".androidRepo .sdkRepoStar").text(stars);
 					$(".androidRepo .sdkRepoFork").text(forks);
@@ -99,7 +90,6 @@ $(document).ready(function(){
 					$(".embeddedRepo .sdkRepoStar").text(stars);
 					$(".embeddedRepo .sdkRepoFork").text(forks);
 				} else if (sortTitle.includes("cli") === true){
-					console.log(sortTitle);
 					$(".cloudCodeRepo .sdkRepoStar").text(stars);
 					$(".cloudCodeRepo .sdkRepoFork").text(forks);
 				}
