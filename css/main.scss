@@ -1046,10 +1046,10 @@ section{
         }
     }
     h4{
-        margin-top: 16px;
+        margin: 0px;
         left: 0px;
         font-size: 14px;
-        line-height: 16px;
+        line-height: 18px;
         font-family: 'alrightBold';
         color: $purpleText;
         padding-left: 24px;
@@ -1058,9 +1058,7 @@ section{
         }
     }
     .repoDescription{
-        top: 36px;
-        left: 0px;
-        margin-bottom: 0px;
+        margin: 0px;
         padding-left: 24px;
         @media screen and (max-width: $smallWidth){
             padding-left: 16px;
