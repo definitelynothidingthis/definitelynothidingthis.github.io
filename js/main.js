@@ -18,7 +18,7 @@ $(document).ready(function(){
 
 	//render repo to page
 	function addToSection(sectionTitle, url, title, description, forks, stars, language){
-		sectionTitle.append("<tr class='repoList'><a href='" + url + "' target='_blank'><td><h4 class='repoTitle'>" + title + "</h4><p class='repoDescription'>" + description + "</p></td><td class='repoInfo'><td><img src='img/forksDark.svg' alt='' class='icon'>" + forks + "</td><td><img src='img/starsDark.svg' alt='' class='icon'>" + stars + "</td><td>" + language + "</td></td></a></tr>");
+		sectionTitle.append("<tr class='repoList'><a href='" + url + "' target='_blank'><td><h4>" + title + "</h4><p class='repoDescription'>" + description + "</p></td><td class='repoInfo'><td><img src='img/forksDark.svg' alt='' class='icon'>" + forks + "</td><td><img src='img/starsDark.svg' alt='' class='icon'>" + stars + "</td><td>" + language + "</td></td></a></tr>");
 		/*sectionTitle.append("
 			<div class='repoList'>
 				<a href='" + url + "' target='_blank'>
