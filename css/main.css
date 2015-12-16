@@ -713,18 +713,19 @@ section {
     bottom: 0px;
     margin: auto 0;
     right: 16px; }
-  .repo h4.repoTitle {
+  .repo .repoTitle {
     padding: 10px 16px;
-    position: relative;
-    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-  .repo p.repoDescription {
-    margin: 0px;
-    opacity: 0.45;
-    font-size: 14px;
-    font-family: "din";
-    line-height: 16px; }
-    .repo p.repoDescription span {
-      margin-right: 24px; }
+    position: relative; }
+    .repo .repoTitle h4 {
+      transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+    .repo .repoTitle p {
+      margin: 0px;
+      opacity: 0.45;
+      font-size: 14px;
+      font-family: "din";
+      line-height: 16px; }
+      .repo .repoTitle p span {
+        margin-right: 24px; }
   .repo .repoLink {
     height: 40px;
     border-top: 1px solid #E0E0EA;

@@ -895,19 +895,21 @@ section{
         margin: auto 0;
         right: 16px;
     }
-    h4.repoTitle{
+    .repoTitle{
         padding: 10px 16px;
         position: relative;
-        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    p.repoDescription{
-        margin: 0px;
-        opacity: 0.45;
-        font-size: 14px;
-        font-family: "din";
-        line-height: 16px;
-        span{
-            margin-right: 24px;
+        h4{
+            transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        p{
+            margin: 0px;
+            opacity: 0.45;
+            font-size: 14px;
+            font-family: "din";
+            line-height: 16px;
+            span{
+                margin-right: 24px;
+            }
         }
     }
     .repoLink{
