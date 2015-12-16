@@ -72,6 +72,7 @@ $smallestWidth: 400px;
 *{
     box-sizing: border-box;
     text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
 }
 html, body{
     height: 100%;
@@ -165,12 +166,12 @@ h2{
     }
 }
 h3{
-    font-size: 22px;
-    line-height: 24px;
+    font-size: 27px;
+    line-height: 32px;
     color: $mainBlue;
     font-family: 'alrightRegular';
-    letter-spacing: -0.1px;
-    margin: 48px 0px 16px 0px;
+    letter-spacing: -0.4px;
+    margin: 48px 0px 10px 0px;
     text-align: center;
     font-weight: 600;
     span{
@@ -328,6 +329,11 @@ nav{
             @media screen and (max-width: $largeWidth) {
                 line-height: 72px;
             } 
+        }
+        .hideOnMobile{
+            @media screen and (max-width: $tinyWidth){
+                display: none;
+            }
         }
         ul{
             padding-left: 16px;
@@ -537,7 +543,7 @@ $headerheightSmall: 54%;
         .middleLineOne{
             transform: translateY(-100%);
         }
-        @media screen and (max-aspect-ratio: 5/3) and (max-width: 1480px) {
+        @media screen and (max-aspect-ratio: 8/5) and (max-width: 1480px) {
             opacity: 0;
         }
         @media screen and (max-width: $smallWidth){
@@ -674,6 +680,18 @@ $headerheightSmall: 54%;
         .headerLeft, .headerRight, .headerCenter{
             transform: scale(0.75);
             transform-origin: center bottom;
+        }
+    }
+    //tall landscape devices like 16:9 tablets
+    @media screen and (max-aspect-ratio: 5/8) and (min-width: $mediumWidth) {
+        .headerLeft{
+            left: -36%;
+        }
+        .headerRight{
+            right: -32%;
+        }
+        .headerCenter{
+            opacity: 0;
         }
     }
 }
@@ -977,7 +995,7 @@ section{
         padding: 14px 16px;
         border-top: 1px solid $purpleBorder;
         min-height: 61px;
-        button{
+        button, .button{
             width: 100%;
         }
     }

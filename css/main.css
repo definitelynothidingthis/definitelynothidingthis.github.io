@@ -18,7 +18,8 @@
   font-style: normal; }
 * {
   box-sizing: border-box;
-  text-rendering: optimizeLegibility; }
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; }
 
 html, body {
   height: 100%;
@@ -101,12 +102,12 @@ h2 {
       font-size: 16px; } }
 
 h3 {
-  font-size: 22px;
-  line-height: 24px;
+  font-size: 27px;
+  line-height: 32px;
   color: #169CEE;
   font-family: 'alrightRegular';
-  letter-spacing: -0.1px;
-  margin: 48px 0px 16px 0px;
+  letter-spacing: -0.4px;
+  margin: 48px 0px 10px 0px;
   text-align: center;
   font-weight: 600; }
   h3 span {
@@ -241,6 +242,9 @@ nav {
       @media screen and (max-width: 960px) {
         nav ul li {
           line-height: 72px; } }
+    @media screen and (max-width: 480px) {
+      nav ul .hideOnMobile {
+        display: none; } }
     nav ul ul {
       padding-left: 16px; }
   @media screen and (max-width: 960px) {
@@ -417,7 +421,7 @@ nav {
       -webkit-transform: translateY(-100%);
           -ms-transform: translateY(-100%);
               transform: translateY(-100%); }
-    @media screen and (max-aspect-ratio: 5 / 3) and (max-width: 1480px) {
+    @media screen and (max-aspect-ratio: 8 / 5) and (max-width: 1480px) {
       .headerIllustration .headerCenter {
         opacity: 0; } }
     @media screen and (max-width: 600px) {
@@ -575,6 +579,13 @@ nav {
       -webkit-transform-origin: center bottom;
           -ms-transform-origin: center bottom;
               transform-origin: center bottom; } }
+  @media screen and (max-aspect-ratio: 5 / 8) and (min-width: 720px) {
+    .headerIllustration .headerLeft {
+      left: -36%; }
+    .headerIllustration .headerRight {
+      right: -32%; }
+    .headerIllustration .headerCenter {
+      opacity: 0; } }
 
 .secondaryNav {
   width: 100%;
@@ -843,7 +854,7 @@ section {
     padding: 14px 16px;
     border-top: 1px solid #E0E0EA;
     min-height: 61px; }
-    .repo .repoButton button {
+    .repo .repoButton button, .repo .repoButton .button {
       width: 100%; }
   @media screen and (max-width: 960px) {
     .repo {
