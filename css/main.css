@@ -820,28 +820,11 @@ section {
   height: 72px;
   background: rgba(14, 105, 161, 0.03);
   position: relative;
-  border-bottom: 0px;
-  /*.repoTitle{
-      padding: 10px 16px;
-      position: relative;
-      h4{
-          transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      p{
-          margin: 0px;
-          opacity: 0.45;
-          font-size: 14px;
-          font-family: "din";
-          line-height: 16px;
-          span{
-              margin-right: 24px;
-          }
-      }
-  }*/ }
+  border-bottom: 0px; }
   .repoList:hover .repoTitle h4 {
     color: #169CEE; }
   .repoList .repoTitle, .repoList .repoDescription, .repoList .repoInfo {
-    position: absolute; }
+    position: relative; }
     .repoList .repoTitle h4, .repoList .repoTitle p, .repoList .repoDescription h4, .repoList .repoDescription p, .repoList .repoInfo h4, .repoList .repoInfo p {
       text-overflow: ellipsis;
       overflow: hidden;
