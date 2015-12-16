@@ -820,6 +820,11 @@ section{
     position: relative;
     width: 100%;
     background: $white;
+    table{
+        width: 100%;
+        max-width: 650px;
+        margin: 0 auto;
+    }
     &:first-of-type{
         padding-top: 32px;
     }
